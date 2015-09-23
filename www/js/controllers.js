@@ -1,22 +1,28 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', function($scope) {
+.controller('homeCtrl', function($scope, $http) {
 
+  $scope.doSearch = function() {
+
+    // var method = 'GET';
+    var url = 'https://www.audiosear.ch/api/search/episodes/filters[categories.name_lc]=Comedy';
+    var params = {
+      'callback': callback,
+      'client_id': app_id,
+      'client_secret': secret,
+      'code': auth_code
+    }
+
+    $http.get(url, {params: params}).then(function(response) {
+      $scope.results = response.data;
+      console.log($scope.results);
+    });
+
+  };
 
 })
 
-.controller('resultsCtrl', function($scope, $http) {
-  var params = {
-    var method = 'GET';
-    var url = '';
-    var params = {
-      'callback': callback,
-      'app_id': app_id,
-      'oauthSecret': secret,
-      'auth_code': auth_code
-    }
-  }
-
+.controller('resultsCtrl', function($scope) {
 
 })
 
