@@ -2,8 +2,9 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('homeCtrl', function($scope, $http) {
 
-  $scope.doSearch = function() {
+  $scope.categories = categories;
 
+  $scope.doSearch = function() {
     var method = 'GET';
     var url = 'https://www.audiosear.ch/api/search/episodes/filters[categories.name_lc]=Comedy';
     var params = {
