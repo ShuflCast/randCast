@@ -1,7 +1,32 @@
 <ion-view view-title="Home">
-<ion-content>
-  <p>This is the home page</p>
-  <a href='#/results'>Results</a>
-  <a href='#/player'>Player</a>
-</ion-content>
+  <ion-content>
+    <p>This is the home page</p>
+    <a href='#/results'>Results</a>
+    <a href='#/player'>Player</a>
+    <div class='list'>
+      <label class='item item-input item-select'>
+        <div class='input-label'>
+          Genre
+        </div>
+        <select>
+          <option vlaue='' disabled selected>select your genre</option>
+          <option> Comedy </option>
+          <option> Tech </option>
+          <option> News </option>
+        </select>
+      </label>
+      <label class='item item-input item-select'>
+        <div class='input-label'>
+          Duration
+        </div>
+        <select>
+          <option vlaue='' disabled selected>select your duration</option>
+          <option> 5-10mins </option>
+          <option> 11-20mins </option>
+          <option> 21-30mins </option>
+        </select>
+      </label>
+    </div>
+    <button class='button button-block' ui-sref='results'> Search </button>
+  </ion-content>
 </ion-view>
