@@ -4,13 +4,13 @@ angular.module('starter.controllers', ['ionic'])
 
   $scope.doSearch = function() {
 
-    // var method = 'GET';
+    var method = 'GET';
     var url = 'https://www.audiosear.ch/api/search/episodes/filters[categories.name_lc]=Comedy';
     var params = {
-      'callback': callback,
       'client_id': app_id,
-      'client_secret': secret,
-      'code': auth_code
+      'redirect_uri': callback,
+      'response_type': 'code',
+      'secret': secret
     }
 
     $http.get(url, {params: params}).then(function(response) {
@@ -27,6 +27,5 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('playerCtrl', function($scope) {
-
 
 })
