@@ -27,5 +27,15 @@ angular.module('starter', ['ionic'])
     templateUrl: 'templates/home.html',
   })
 
+  .state('results', {
+    url: '/results',
+    templateUrl: 'templates/results.html',
+  })
+
+  .state('player', {
+    url: '/player',
+    templateUrl: 'templates/player.html',
+  })
+
   $urlRouterProvider.otherwise('/')
 });
