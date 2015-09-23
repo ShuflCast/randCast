@@ -1,3 +1,4 @@
+
 <section ng-controller="homeCtrl">
   <ion-view view-title="Home">
     <ion-content>
@@ -8,3 +9,32 @@
     </ion-content>
   </ion-view>
 </section>
+<ion-view view-title="Home">
+  <ion-content>
+    <div class='list'>
+      <label class='item item-input item-select'>
+        <div class='input-label'>
+          Genre
+        </div>
+        <select>
+          <option value='' disabled selected style='display:none;'>select your genre</option>
+          <option> Comedy </option>
+          <option> Tech </option>
+          <option> News </option>
+        </select>
+      </label>
+      <label class='item item-input item-select'>
+        <div class='input-label'>
+          Duration
+        </div>
+        <select>
+          <option value='' disabled selected style='display:none;'>select your duration</option>
+          <option> 5-10mins </option>
+          <option> 11-20mins </option>
+          <option> 21-30mins </option>
+        </select>
+      </label>
+    </div>
+    <button class='button button-block' ui-sref='results'> Search </button>
+  </ion-content>
+</ion-view>
