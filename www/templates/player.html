@@ -1,54 +1,45 @@
 <ion-view view-title="Player">
   <ion-content>
-        <ion-audio-track track="myTrack">
-          <div class="list list-inset">
-              <div class="item item-thumbnail-left">
-                  <img src="{{track.art}}">
-                  <h2>{{track.title}}</h2>
-                  <p>{{track.artist}}</p>
-                  <ion-audio-controls>
-                        <a class="button button-icon icon" ion-audio-play></a>
-                        <ion-spinner icon="ios"></ion-spinner>
-                    </ion-audio-controls>
+    <ion-audio-track track="myTrack">
+      <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+          <div class='list card'>
+            <div class='item'>
+              <h2>{{track.title}}</h2>
+              <p>{{track.artist}}</p>
+            </div>
+            <div class="item item-image">
+              <img src="{{track.art}}">
+            </div>
+            <div class="item">
+              <ion-audio-progress-bar display-time></ion-audio-progress-bar>
+            </div>
+            <ion-audio-controls>
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class='tab-item' href="#">
+                  <i class='icon ion-skip-backward'></i>
+                </a>
+                <a class='tab-item' ion-audio-play>
+                  <!-- <ion-spinner icon="ios"></ion-spinner> -->
+                </a>
+                <a class='tab-item' href="#">
+                  <i class='icon ion-skip-forward'></i>
+                </a>
               </div>
-              <div class="item">
-                <ion-audio-progress-bar display-time></ion-audio-progress-bar>
-              </div>
+            </ion-audio-controls>
           </div>
-      </ion-audio-track>
-<!--   <ion-slide-box on-slide-changed="slideHasChanged($index)">
-    <ion-slide>
-    <div class='list card'>
-      <div class='item'>
-        <h2>Episode title</h2>
-        <p>Podcast name</p>
-      </div>
-      <div class="item item-image">
-        <img src="http://www.thisamericanlife.org/sites/all/themes/thislife/images/logo-square-1400.jpg">
-      </div>
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class='tab-item' href="#">
-          <i class='icon ion-skip-backward'></i>
-        </a>
-        <a class='tab-item' href="#">
-          <i class='icon ion-play'></i>
-        </a>
-        <a class='tab-item' href="#">
-          <i class='icon ion-skip-forward'></i>
-        </a>
-      </div>
-    </div>
-    </ion-slide>
-    <ion-slide>
-      <div class='list card'>
-        <div class='item'>
-          <h2>Description</h2>
-        </div>
-      <div class="item item-body">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-    </div>
-  </ion-slide>
-</ion-slide-box> -->
+        </ion-slide>
+        <ion-slide>
+          <div class='list card'>
+            <div class='item'>
+              <h2>Description</h2>
+            </div>
+            <div class="item item-body">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </ion-audio-track>
   </ion-content>
 </ion-view>
