@@ -1,7 +1,25 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', function($scope) {
+.controller('homeCtrl', function($scope, $http) {
 
+  $scope.categories = categories;
+
+  $scope.doSearch = function() {
+    var method = 'GET';
+    var url = 'https://www.audiosear.ch/api/search/episodes/filters[categories.name_lc]=Comedy';
+    var params = {
+      'client_id': app_id,
+      'redirect_uri': callback,
+      'response_type': 'code',
+      'secret': secret
+    }
+
+    $http.get(url, {params: params}).then(function(response) {
+      $scope.results = response.data;
+      console.log($scope.results);
+    });
+
+  };
 
 })
 
@@ -1141,8 +1159,6 @@ angular.module('starter.controllers', ['ionic'])
 ]
 
 $scope.podcasts = $scope.json[0].results
-console.log($scope.podcasts[0].description)
-// console.log(podcasts[0].title)
 
 })
 
@@ -1153,6 +1169,5 @@ console.log($scope.podcasts[0].description)
     title: "wack aday",
     art: "http://images.askmen.com/top_10/celebrity/breakfast-tv-presenters_423192.jpg"
   }
-
 
 })
