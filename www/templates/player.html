@@ -1,6 +1,22 @@
 <ion-view view-title="Player">
   <ion-content>
-  <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-audio-track track="myTrack">
+          <div class="list list-inset">
+              <div class="item item-thumbnail-left">
+                  <img src="{{track.art}}">
+                  <h2>{{track.title}}</h2>
+                  <p>{{track.artist}}</p>
+                  <ion-audio-controls>
+                        <a class="button button-icon icon" ion-audio-play></a>
+                        <ion-spinner icon="ios"></ion-spinner>
+                    </ion-audio-controls>
+              </div>
+              <div class="item">
+                <ion-audio-progress-bar display-time></ion-audio-progress-bar>
+              </div>
+          </div>
+      </ion-audio-track>
+<!--   <ion-slide-box on-slide-changed="slideHasChanged($index)">
     <ion-slide>
     <div class='list card'>
       <div class='item'>
@@ -33,6 +49,6 @@
       </div>
     </div>
   </ion-slide>
-</ion-slide-box>
+</ion-slide-box> -->
   </ion-content>
 </ion-view>
