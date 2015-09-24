@@ -1,11 +1,12 @@
 <ion-view view-title="Results">
-<ion-content>
-  <div class='list'>
-    <a class='item item-thumbnail-left' ui-sref='player'>
-      <img src='http://www.thisamericanlife.org/sites/all/themes/thislife/images/logo-square-1400.jpg'>
-      <h2>Episode title</h2>
-      <p>description/duration</p>
-    </a>
-  </div>
-</ion-content>
+  <ion-content>
+    <div class='list'>
+      <a ng-repeat='podcast in podcasts' class='item item-thumbnail-left' ui-sref='player'>
+        <img src="{{ podcast.image_urls.full }}">
+        <h2>{{ podcast.title }}</h2>
+        <p class="item-wrap">{{podcast.description}}</p>
+        <p>Length - {{podcast.duration}} seconds</p>
+      </a>
+    </div>
+  </ion-content>
 </ion-view>
