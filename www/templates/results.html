@@ -1,11 +1,11 @@
 <ion-view view-title="Results">
   <ion-content>
     <div class='list'>
-      <a ng-repeat='podcast in podcasts' class='item item-thumbnail-left' ui-sref='player'>
-        <img src="{{ podcast.image_urls.full }}">
-        <h2>{{ podcast.title }}</h2>
-        <p class="item-wrap">{{podcast.description}}</p>
-        <p>Length - {{podcast.duration}} seconds</p>
+      <a ng-repeat='result in results' class='item item-thumbnail-left' ui-sref='player'>
+<!--         <img src="{{ podcast.image_urls.full }}"> -->
+        <h2>{{ result.title }}</h2>
+<!--         <p class="item-wrap">Hello Rich</p>
+        <p>Length - {{result.duration}} seconds</p> -->
       </a>
     </div>
   </ion-content>
