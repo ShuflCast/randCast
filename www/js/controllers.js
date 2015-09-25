@@ -1,14 +1,16 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', function($scope, ApiCall) {
+.controller('homeCtrl', function($scope, ApiCall, $state) {
 
   $scope.categories = categories;
 
   $scope.doSearch = function() {
 
-    $scope.search_term = 'business';
+    var search_term = 'business';
 
-    ApiCall(search_term);
+    ApiCall.makeCall(search_term);
+
+    $state.go('results');
 
   };
 
@@ -16,7 +18,11 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('resultsCtrl', function($scope, $http, ApiCall) {
 
-  // console.log(ApiCall.results);
+
+// $scope.displayResults = function() {
+  var results = ApiCall.getResults();
+  console.log(results);
+// }
 
 })
 
