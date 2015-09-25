@@ -1,11 +1,13 @@
 <ion-view view-title="Results">
   <ion-content>
-    <div class='list'>
-      <a ng-repeat='podcast in podcasts' class='item item-thumbnail-left' ui-sref='player'>
+    <div class='list list-inset'>
+      <a ng-repeat='podcast in podcasts' class='item item-thumbnail-left item-text-wrap' ui-sref='player'>
         <img src="{{ podcast.image_urls.full }}">
-        <h2>{{ podcast.title }}</h2>
-        <p class="item-wrap">{{podcast.description}}</p>
-        <p>Length - {{podcast.duration}} seconds</p>
+        <h3>{{ podcast.title }}</h3>
+        <div class="description">
+          <p>{{ podcast.description }}</p>
+        </div>
+        <p>Duration: {{ podcast.duration | time: 'mm:ss' }} mins</p>
       </a>
     </div>
   </ion-content>

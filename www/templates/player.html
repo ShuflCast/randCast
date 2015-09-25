@@ -15,15 +15,17 @@
               <ion-audio-progress-bar display-time></ion-audio-progress-bar>
             </div>
             <ion-audio-controls>
+            <div class='spinner'>
+              <ion-spinner icon="ripple"></ion-spinner>
+            </div>
               <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class='tab-item' href="#">
                   <i class='icon ion-skip-backward'></i>
                 </a>
-                <a class='tab-item' ion-audio-play>
-                  <!-- <ion-spinner icon="ios"></ion-spinner> -->
+                <button class="button button-large button-light custom-button" ion-audio-play></button>
                 </a>
                 <a class='tab-item' href="#">
-                  <i class='icon ion-skip-forward'></i>
+                  <i class="icon ion-skip-forward"></i>
                 </a>
               </div>
             </ion-audio-controls>
@@ -35,7 +37,7 @@
               <h2>Description</h2>
             </div>
             <div class="item item-body">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <p>{{ track.description }}</p>
             </div>
           </div>
         </ion-slide>
