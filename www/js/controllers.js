@@ -5,24 +5,18 @@ angular.module('starter.controllers', ['ionic'])
   $scope.categories = categories;
 
   $scope.doSearch = function() {
-
     var search_term = 'business';
-
-    ApiCall.makeCall(search_term);
-
-    $state.go('results');
-
+    ApiCall.makeCall(search_term).then(function() {
+      $state.go('results');
+    })
   };
 
 })
 
 .controller('resultsCtrl', function($scope, $http, ApiCall) {
 
-
-// $scope.displayResults = function() {
-  var results = ApiCall.getResults();
+  $scope.results = ApiCall.getResults();
   console.log(results);
-// }
 
 })
 
