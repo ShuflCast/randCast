@@ -30,7 +30,6 @@ angular.module('starter.controllers', ['ionic'])
 
   $scope.myTrack = {
     url: $scope.trackOptions.urls.high_mp3,
-    // url: 'http://robbbenson.com/01%20Angel.mp3',
     episode: $scope.trackOptions.title,
     show: $scope.trackOptions.channel.title,
     art: $scope.trackOptions.urls.image,
