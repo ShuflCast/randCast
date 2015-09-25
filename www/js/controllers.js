@@ -24,7 +24,7 @@ angular.module('starter.controllers', ['ionic'])
 
 })
 
-.controller('playerCtrl', function($scope, ApiCall) {
+.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
   $scope.trackOptions = ApiCall.getTrack();
 
@@ -34,6 +34,10 @@ angular.module('starter.controllers', ['ionic'])
     show: $scope.trackOptions.channel.title,
     art: $scope.trackOptions.urls.image,
     description: $scope.trackOptions.description
+  }
+
+  $scope.shareAnywhere = function() {
+      $cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "http://blog.nraboy.com");
   }
 
 })
