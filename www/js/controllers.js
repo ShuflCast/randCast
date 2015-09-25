@@ -5,7 +5,6 @@ angular.module('starter.controllers', ['ionic'])
   $scope.categories = categories;
 
   $scope.doSearch = function(search_term) {
-    console.log(search_term);
     ApiCall.makeCall(search_term).then(function() {
       $state.go('results');
     })
@@ -13,18 +12,29 @@ angular.module('starter.controllers', ['ionic'])
 
 })
 
-.controller('resultsCtrl', function($scope, $http, ApiCall) {
+.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
 
   $scope.results = ApiCall.getResults();
 
+  $scope.showPlayer = function(result) {
+    ApiCall.setTrack(result);
+    console.log(result);
+    $state.go('player');
+  }
+
 })
 
-.controller('playerCtrl', function($scope) {
+.controller('playerCtrl', function($scope, ApiCall) {
+
+  $scope.trackOptions = ApiCall.getTrack();
+
   $scope.myTrack = {
-    url: "http://robbbenson.com/01%20Angel.mp3",
-    artist: "timmy mallet",
-    title: "wack aday",
-    art: "http://images.askmen.com/top_10/celebrity/breakfast-tv-presenters_423192.jpg"
+    url: $scope.trackOptions.urls.high_mp3,
+    // url: 'http://robbbenson.com/01%20Angel.mp3',
+    episode: $scope.trackOptions.title,
+    show: $scope.trackOptions.channel.title,
+    art: $scope.trackOptions.urls.image,
+    description: $scope.trackOptions.description
   }
 
 })

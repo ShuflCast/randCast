@@ -3,6 +3,7 @@ angular.module('starter.services', [])
 .factory('ApiCall', function($http) {
 
   var results = [];
+  var track = [];
 
   return {
 
@@ -17,6 +18,15 @@ angular.module('starter.services', [])
 
     getResults: function() {
       return results;
+    },
+
+    setTrack: function(result) {
+      track = result;
+      return track;
+    },
+
+    getTrack: function() {
+      return track;
     }
   };
 
