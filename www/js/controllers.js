@@ -1,23 +1,22 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', ['apiCall', function($scope, apiCall) {
+.controller('homeCtrl', function($scope, ApiCall) {
 
   $scope.categories = categories;
 
   $scope.doSearch = function() {
 
-    var search_term = 'business';
-    var url = 'https://api.audioboom.com/tag/' + search_term + '/audio_clips'
+    $scope.search_term = 'business';
 
-    apiCall(url);
+    ApiCall(search_term);
 
   };
 
-}])
+})
 
-.controller('resultsCtrl', function($scope, $http, 'apiCall') {
+.controller('resultsCtrl', function($scope, $http, ApiCall) {
 
-  console.log(apiCall.results);
+  // console.log(ApiCall.results);
 
 })
 
