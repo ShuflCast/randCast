@@ -4,8 +4,8 @@ angular.module('starter.controllers', ['ionic'])
 
   $scope.categories = categories;
 
-  $scope.doSearch = function(search_term) {
-    ApiCall.makeCall(search_term).then(function() {
+  $scope.doSearch = function(search_term, duration) {
+    ApiCall.makeCall(search_term, duration).then(function() {
       $state.go('results');
     })
   };
@@ -16,7 +16,7 @@ angular.module('starter.controllers', ['ionic'])
 
   $scope.results = ApiCall.getResults();
 
-  $scope.showPlayer = function(result) {
+  $scope.setPlayer = function(result) {
     ApiCall.setTrack(result);
     console.log(result);
     $state.go('player');
