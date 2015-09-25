@@ -2,10 +2,9 @@
   <ion-content>
     <div class='list'>
       <a ng-repeat='result in results' class='item item-thumbnail-left' ui-sref='player'>
-<!--         <img src="{{ podcast.image_urls.full }}"> -->
+        <img src="{{ result.urls.image }}">
         <h2>{{ result.title }}</h2>
-<!--         <p class="item-wrap">Hello Rich</p>
-        <p>Length - {{result.duration}} seconds</p> -->
+        <p>Length - {{result.duration}} seconds</p>
       </a>
     </div>
   </ion-content>

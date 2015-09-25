@@ -16,7 +16,7 @@ angular.module('starter.controllers', ['ionic'])
 .controller('resultsCtrl', function($scope, $http, ApiCall) {
 
   $scope.results = ApiCall.getResults();
-  console.log(results);
+  console.log($scope.results);
 
 })
 
