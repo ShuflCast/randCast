@@ -8,24 +8,24 @@ angular.module('starter.services', [])
   var track = [];
   var duration_options = [
     {
-      'name': '0-4 minutes',
-      'min': 0,
-      'max': 299
+      'name': '1 - 15',
+      'min': 1,
+      'max': 899
     },
     {
-      'name': '5-10 minutes',
-      'min': 300,
-      'max': 659
+      'name': '15 - 45',
+      'min': 900,
+      'max': 2699
     },
     {
-      'name': '11-20 minutes',
-      'min': 660,
-      'max': 1259
+      'name': '45 - 90',
+      'min': 2700,
+      'max': 5399
     },
     {
-      'name': '21-30 minutes',
-      'min': 1260,
-      'max': 1800
+      'name': '90 +',
+      'min': 5400,
+      'max': 999999999
     }
   ];
 
@@ -42,18 +42,17 @@ angular.module('starter.services', [])
   var findIndexInData = function(data, property, value) {
     var result = -1;
     data.some(function (item, i) {
-        if (item[property] === value) {
-            result = i;
-            return true;
-        }
+      if (item[property] === value) {
+          result = i;
+          return true;
+      }
     });
     return result;
-  }
+  };
 
   var searchResults = function(search_term) {
     var index = findIndexInData(categories, 'category', search_term);
     var params_string ='filters%5Bcategories.id%5D=' + categories[index]['id'];
-    console.log(params_string)
     return params_string;
   };
 
@@ -68,8 +67,8 @@ angular.module('starter.services', [])
     },
 
     makeCall: function(search_term, duration) {
-      searchResults(search_term);
-      var url = 'https://intense-forest-8107.herokuapp.com/search?search_term=' + searchResults(search_term);
+      var params = searchResults(search_term);
+      var url = 'https://intense-forest-8107.herokuapp.com/search?search_term=' + params;
       return $http.get(url).then(function(response) {
         results = response.data;
         filter_duration(duration);

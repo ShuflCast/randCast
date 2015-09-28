@@ -7,7 +7,7 @@
         <div class="description">
           <p>{{ result.description }}</p>
         </div>
-        <p>Duration: {{ result.duration }} mins</p>
+        <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
       </a>
     </div>
   </ion-content>

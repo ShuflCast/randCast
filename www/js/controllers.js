@@ -17,7 +17,6 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
 
   $scope.setPlayer = function(result) {
     ApiCall.setTrack(result);
-    console.log(result);
     $state.go('player');
   }
 
@@ -42,7 +41,7 @@ app.filter('durationFilter', function(ApiCall) {
  var min = ApiCall.returnMin();
  var max = ApiCall.returnMax();
 
- return function (items) {
+ return function(items) {
    var filtered = [];
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
