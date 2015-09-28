@@ -15,13 +15,28 @@
           <div class='input-label'>
             Duration
           </div>
-          <select ng-model='duration'>
-            <option value='' disabled selected style='display:none;'>select your duration</option>
+          <!-- <select ng-model='duration'> -->
+<!--             <option value='' disabled selected style='display:none;'>select your duration</option>
             <option>1 - 15</option>
             <option>15 - 45</option>
             <option>45 - 90</option>
-            <option>90 +</option>
-          </select>
+            <option>90 +</option> -->
+<!--             <ul>
+              <li ng-repeat="item in durations">
+                  <p>Duration: {{ item.name }}</p>
+                    <slider floor="1" ceiling="90" step="15" precision="2" ng-model="item.name"></slider>
+              </li>
+          </ul> -->
+          <div class="list">
+            <div class="item range range-positive">
+            <p>Duration: {{ duration }}</p>
+            <br></br>
+              <i>0</i>
+              <input type="range" name="volume" min="0" max="90" step="15" value="30" ng-model="duration">
+              <i>90</i>
+            </div>
+          </div>
+          <!-- </select> -->
         </label>
       </div>
       <button type='submit' class='button button-block'> Search </button>
