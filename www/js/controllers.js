@@ -29,7 +29,7 @@ angular.module('starter.controllers', ['ionic'])
   $scope.trackOptions = ApiCall.getTrack();
 
   $scope.myTrack = {
-    url: $scope.trackOptions.audio_files.mp3,
+    url: $scope.trackOptions.audio_files[0].mp3,
     episode: $scope.trackOptions.title,
     show: $scope.trackOptions.show_title,
     art: $scope.trackOptions.image_urls.full,
