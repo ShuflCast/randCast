@@ -30,3 +30,7 @@ img {
   display: inline-block;
   vertical-align: middle;
 }
+
+.popup-body {
+  text-align: center;
+}
