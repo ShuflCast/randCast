@@ -6,8 +6,6 @@ angular.module('starter.services', [])
   var min = null;
   var max = null;
   var track = [];
-  var min = null;
-  var max = null;
   var duration_options = [
     {
       'name': '0-4 minutes',
