@@ -2,7 +2,7 @@
   <ion-content>
     <div class='list list-inset'>
       <a ng-click='setPlayer(result)' ng-repeat='result in results' class='item item-thumbnail-left item-text-wrap'>
-        <img src="{{ result.urls.image }}">
+        <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
           <p>{{ result.description }}</p>

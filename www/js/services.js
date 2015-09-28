@@ -60,6 +60,7 @@ angular.module('starter.services', [])
   var searchResults = function(search_term) {
     var index = findIndexInData(categories, 'category', search_term);
     var params_string ='filters%5Bcategories.id%5D=' + categories[index]['id'];
+    console.log(params_string)
     return params_string;
   };
 
@@ -67,10 +68,10 @@ angular.module('starter.services', [])
 
     makeCall: function(search_term, duration) {
       searchResults(search_term);
-      var url = 'https://api.audioboom.com/tag/' + search_term + '/audio_clips';
+      var url = 'https://intense-forest-8107.herokuapp.com/search?search_term=' + searchResults(search_term);
       return $http.get(url).then(function(response) {
-        results = response.data.body.audio_clips;
-        filter_duration(duration);
+        results = response.data;
+        // filter_duration(duration);
         return results;
       });
     },
