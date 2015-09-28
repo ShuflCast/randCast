@@ -21,7 +21,6 @@ angular.module('starter.controllers', ['ionic'])
     console.log(result);
     $state.go('player');
   }
-
 })
 
 .controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
@@ -37,7 +36,6 @@ angular.module('starter.controllers', ['ionic'])
   }
 
   $scope.shareAnywhere = function() {
-      $cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "http://blog.nraboy.com");
+    $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
   }
-
 })
