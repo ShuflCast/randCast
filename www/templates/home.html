@@ -1,31 +1,30 @@
-<section ng-controller='homeCtrl'>
-  <ion-view view-title="Home">
-    <ion-content>
+<ion-view view-title="Home">
+  <ion-content>
+    <form ng-submit="doSearch(search_term, duration)"
       <div class='list'>
         <label class='item item-input item-select'>
           <div class='input-label'>
             Genre
           </div>
-          <select>
+          <select ng-model='search_term'>
             <option value='' disabled selected style='display:none;'>select your genre</option>
-            <option ng-repeat='option in categories'>
-              {{ option.category }}
-            </option>
+            <option ng-repeat='option in categories'>{{ option.category }}</option>
           </select>
         </label>
         <label class='item item-input item-select'>
           <div class='input-label'>
             Duration
           </div>
-          <select>
+          <select ng-model='duration'>
             <option value='' disabled selected style='display:none;'>select your duration</option>
-            <option> 5-10mins </option>
-            <option> 11-20mins </option>
-            <option> 21-30mins </option>
+            <option>0-4 minutes</option>
+            <option>5-10 minutes</option>
+            <option>11-20 minutes</option>
+            <option>21-30 minutes</option>
           </select>
         </label>
       </div>
-      <button class='button button-block' ui-sref='results'> Search </button>
-    </ion-content>
-  </ion-view>
-</section>
+      <button type='submit' class='button button-block'> Search </button>
+    </form>
+  </ion-content>
+</ion-view>
