@@ -41,16 +41,33 @@ angular.module('starter.services', [])
     for (i = 0; i < results.length; i++ ) {
       if (results[i].duration < min || results[i].duration > max) {
         results.splice(i, 1);
-        console.log(results);
+        // console.log(results);
       };
     };
+  };
+
+  var findIndexInData = function(data, property, value) {
+    var result = -1;
+    data.some(function (item, i) {
+        if (item[property] === value) {
+            result = i;
+            return true;
+        }
+    });
+    return result;
+  }
+
+  var searchResults = function(search_term) {
+    var index = findIndexInData(categories, 'category', search_term);
+    var params_string ='filters%5Bcategories.id%5D=' + categories[index]['id'];
+    return params_string;
   };
 
   return {
 
     makeCall: function(search_term, duration) {
+      searchResults(search_term);
       var url = 'https://api.audioboom.com/tag/' + search_term + '/audio_clips';
-
       return $http.get(url).then(function(response) {
         results = response.data.body.audio_clips;
         filter_duration(duration);
