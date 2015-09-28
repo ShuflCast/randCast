@@ -1,6 +1,6 @@
-angular.module('starter.controllers', ['ionic'])
+var app = angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', function($scope, ApiCall, $state) {
+app.controller('homeCtrl', function($scope, ApiCall, $state) {
 
   $scope.categories = categories;
 
@@ -9,10 +9,9 @@ angular.module('starter.controllers', ['ionic'])
       $state.go('results');
     })
   };
-
 })
 
-.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
+app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
 
   $scope.results = ApiCall.getResults();
 
@@ -24,7 +23,7 @@ angular.module('starter.controllers', ['ionic'])
 
 })
 
-.controller('playerCtrl', function($scope, ApiCall) {
+app.controller('playerCtrl', function($scope, ApiCall) {
 
   $scope.trackOptions = ApiCall.getTrack();
 
@@ -37,3 +36,20 @@ angular.module('starter.controllers', ['ionic'])
   }
 
 })
+
+app.filter('durationFilter', function(ApiCall) {
+
+  var min = ApiCall.returnMin();
+  var max = ApiCall.returnMax();
+
+  return function (items) {
+    var filtered = [];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (item.duration >= min && item.duration <= max) {
+        filtered.push(item);
+      }
+    }
+    return filtered;
+  };
+});
