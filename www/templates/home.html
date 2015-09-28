@@ -1,27 +1,27 @@
 <section ng-controller='homeCtrl'>
   <ion-view view-title="rand(Cast)">
     <ion-content>
+    <form ng-submit="doSearch(search_term, duration)"
       <div class='list'>
         <!-- <label class='item item-input item-select'>
           <div class='input-label'>
             Genre
           </div>
-          <select>
+          <select ng-model='search_term'>
             <option value='' disabled selected style='display:none;'>select your genre</option>
-            <option ng-repeat='option in categories'>
-              {{ option.category }}
-            </option>
+            <option ng-repeat='option in categories'>{{ option.category }}</option>
           </select>
         </label> -->
         <!--         <label class='item item-input item-select'>
           <div class='input-label'>
             Duration
           </div>
-          <select>
+          <select ng-model='duration'>
             <option value='' disabled selected style='display:none;'>select your duration</option>
-            <option> 5-10mins </option>
-            <option> 11-20mins </option>
-            <option> 21-30mins </option>
+            <option>1 - 15</option>
+            <option>15 - 45</option>
+            <option>45 - 90</option>
+            <option>90 +</option>
           </select>
         </label> -->
         <h4>Select Duration</h4>
