@@ -21,10 +21,9 @@ angular.module('starter.controllers', ['ionic'])
     console.log(result);
     $state.go('player');
   }
-
 })
 
-.controller('playerCtrl', function($scope, ApiCall) {
+.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
   $scope.trackOptions = ApiCall.getTrack();
 
@@ -36,4 +35,7 @@ angular.module('starter.controllers', ['ionic'])
     description: $scope.trackOptions.description
   }
 
+  $scope.shareAnywhere = function() {
+    $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
+  }
 })
