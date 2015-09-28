@@ -1,8 +1,8 @@
 <section ng-controller='homeCtrl'>
-  <ion-view view-title="Home">
+  <ion-view view-title="rand(Cast)">
     <ion-content>
       <div class='list'>
-        <label class='item item-input item-select'>
+        <!-- <label class='item item-input item-select'>
           <div class='input-label'>
             Genre
           </div>
@@ -12,8 +12,8 @@
               {{ option.category }}
             </option>
           </select>
-        </label>
-        <label class='item item-input item-select'>
+        </label> -->
+        <!--         <label class='item item-input item-select'>
           <div class='input-label'>
             Duration
           </div>
@@ -23,9 +23,66 @@
             <option> 11-20mins </option>
             <option> 21-30mins </option>
           </select>
-        </label>
-      </div>
-      <button class='button button-block' ui-sref='results'> Search </button>
+        </label> -->
+        <h4>Select Duration</h4>
+
+        <div class='button-bar'>
+          <a class='button button-small'>1 - 15</a>
+          <a class='button button-small'>16 - 45</a>
+          <a class='button button-small'>45 - 90</a>
+          <a class='button button-small'>90+</a>
+        </div>
+
+        <h4>Select Genre</h4>
+
+        <div class="row">
+          <div class="col pos1" on-touch="onTouch()">
+            <i class="col material-icons md-36">mood</i>
+            <div class='col col-bottom'>Comedy</div>
+          </div>
+          <div class="col pos2" on-touch="onTouch()">
+            <i class="col material-icons md-36">directions_run</i>
+            <div class='col col-bottom'>Sport</div>
+          </div>
+          <div class="col pos3" on-touch="onTouch()">
+            <i class="col material-icons md-36">local_movies</i>
+            <div class='col col-bottom'>Entertainment</div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col pos4" on-touch="onTouch()">
+            <i class="col material-icons white md-36">local_library</i>
+            <div class='col col-bottom'>Culture</div>
+          </div>
+          <div class="col pos5" on-touch="onTouch()">
+            <i class="col material-icons white md-36">keyboard</i>
+            <div class='col col-bottom'>Tech</div>
+          </div>
+          <div class="col pos6" on-touch="onTouch()">
+             <i class="col material-icons white md-36">school</i>
+            <div class='col col-bottom'>Education</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col pos7" on-touch="onTouch()">
+            <i class="col material-icons white md-48">content_paste</i>
+            <div class='col col-bottom'>Science</div>
+          </div>
+          <div class="col pos8" on-touch="onTouch()">
+            <i class="col material-icons black md-48">public</i>
+            <div class='col col-bottom'>News</div>
+          </div>
+          <div class="col pos9" on-touch="onTouch()">
+            <i class="col material-icons red md-48">business</i>
+            <div class='col col-bottom'>Business</div>
+          </div>
+        </div>
+
+        <button class='button button-block button-positive'>Feeling Lucky</button>
+        <button class='button button-block button-positive' ui-sref='results'> Search </button>
     </ion-content>
   </ion-view>
 </section>
