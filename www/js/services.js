@@ -3,6 +3,8 @@ angular.module('starter.services', [])
 .factory('ApiCall', function($http) {
 
   var results = [];
+  var min = null;
+  var max = null;
   var track = [];
   var duration_options = [
     {
@@ -28,20 +30,11 @@ angular.module('starter.services', [])
   ];
 
   var filter_duration = function(duration) {
-    var min = null;
-    var max = null;
 
     for (i = 0; i < duration_options.length; i++ ) {
       if (duration_options[i].name === duration) {
         min = duration_options[i].min;
         max = duration_options[i].max;
-      };
-    };
-
-    for (i = 0; i < results.length; i++ ) {
-      if (results[i].duration < min || results[i].duration > max) {
-        results.splice(i, 1);
-        // console.log(results);
       };
     };
   };
@@ -66,12 +59,20 @@ angular.module('starter.services', [])
 
   return {
 
+    returnMin: function() {
+      return min;
+    },
+
+    returnMax: function() {
+      return max;
+    },
+
     makeCall: function(search_term, duration) {
       searchResults(search_term);
       var url = 'https://intense-forest-8107.herokuapp.com/search?search_term=' + searchResults(search_term);
       return $http.get(url).then(function(response) {
         results = response.data;
-        // filter_duration(duration);
+        filter_duration(duration);
         return results;
       });
     },
