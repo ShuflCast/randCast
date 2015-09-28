@@ -28,10 +28,10 @@ app.controller('playerCtrl', function($scope, ApiCall) {
   $scope.trackOptions = ApiCall.getTrack();
 
   $scope.myTrack = {
-    url: $scope.trackOptions.urls.high_mp3,
+    url: $scope.trackOptions.audio_files[0].mp3,
     episode: $scope.trackOptions.title,
-    show: $scope.trackOptions.channel.title,
-    art: $scope.trackOptions.urls.image,
+    show: $scope.trackOptions.show_title,
+    art: $scope.trackOptions.image_urls.full,
     description: $scope.trackOptions.description
   }
 
@@ -39,17 +39,17 @@ app.controller('playerCtrl', function($scope, ApiCall) {
 
 app.filter('durationFilter', function(ApiCall) {
 
-  var min = ApiCall.returnMin();
-  var max = ApiCall.returnMax();
+ var min = ApiCall.returnMin();
+ var max = ApiCall.returnMax();
 
-  return function (items) {
-    var filtered = [];
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-      if (item.duration >= min && item.duration <= max) {
-        filtered.push(item);
-      }
-    }
-    return filtered;
-  };
+ return function (items) {
+   var filtered = [];
+   for (var i = 0; i < items.length; i++) {
+     var item = items[i];
+     if (item.duration >= min && item.duration <= max) {
+       filtered.push(item);
+     }
+   }
+   return filtered;
+ };
 });
