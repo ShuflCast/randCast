@@ -1,26 +1,71 @@
-<ion-view view-title="Home">
-<ion-content>
-<form ng-submit="doSearch(search_term, duration_options[duration_index])"
-<div class='list'>
-  <label class='item item-input item-select'>
+
+<section ng-controller='homeCtrl'>
+  <ion-view view-title="rand(Cast)">
+  <ion-content>
+  <form ng-submit="doSearch(search_term, duration_options[duration_index])"
+  <div class='list'>
+
     <div class='input-label'>
-      Genre
+      <h4>Duration: {{ duration_options[duration_index] }}</h4>
     </div>
-    <select ng-model='search_term'>
-      <option value='' disabled selected style='display:none;'>select your genre</option>
-      <option ng-repeat='option in categories'>{{ option.category }}</option>
-    </select>
-  </label>
-  <div class='input-label'>
-    <p>Duration: {{ duration_options[duration_index] }}</p>
+    <div class="item range range-positive">
+      <i class='icon ion-minus'></i>
+      <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
+      <i class='icon ion-plus'></i>
+    </div>
+
+    <h4>Select Genre</h4>
+
+    <div class="row">
+      <div class="col pos1">
+        <i class="col material-icons white md-48">mood</i>
+        <div class='col col-bottom'>Comedy</div>
+      </div>
+      <div class="col pos2">
+        <i class="col material-icons white md-48">directions_run</i>
+        <div class='col col-bottom'>Sport</div>
+      </div>
+      <div class="col pos3">
+        <i class="col material-icons white md-48">local_movies</i>
+        <div class='col col-bottom'>Entertainment</div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col pos4">
+        <i class="col material-icons white md-48">local_library</i>
+        <div class='col col-bottom'>Culture</div>
+      </div>
+      <div class="col pos5">
+        <i class="col material-icons white md-48">keyboard</i>
+        <div class='col col-bottom'>Tech</div>
+      </div>
+      <div class="col pos6">
+       <i class="col material-icons white md-48">school</i>
+       <div class='col col-bottom'>Education</div>
+     </div>
+   </div>
+
+   <div class="row">
+    <div class="col pos7">
+      <i class="col material-icons white md-48">content_paste</i>
+      <div class='col col-bottom'>Science</div>
+    </div>
+    <div class="col pos8">
+      <i class="col material-icons white md-48">public</i>
+      <div class='col col-bottom'>News</div>
+    </div>
+    <div class="col pos9">
+      <i class="col material-icons white md-48">business</i>
+      <div class='col col-bottom'>Business</div>
+    </div>
   </div>
-  <div class="item range range-positive">
-    <i class='icon ion-minus'></i>
-    <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
-    <i class='icon ion-plus'></i>
+  <div class="button-bar search">
+    <button class='button btnsearch button-calm' ui-sref='player'> Feeling Lucky </button>
+    <button class='button btnfeeling button-calm' ui-sref='results'> Search </button>
   </div>
-</div>
-<button type='submit' class='button button-block'> Search </button>
-</form>
 </ion-content>
 </ion-view>
+</section>
+
