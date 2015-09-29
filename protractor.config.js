@@ -10,10 +10,10 @@ exports.config = {
           ],
           jasmineNodeOpts: {
                   showColors: true,
-                 defaultTimeoutInterval: 3000000,
+                 defaultTimeoutInterval: 300000000,
                 isVerbose: true,
           },
-        allScriptsTimeout: 2000000,
+        allScriptsTimeout: 200000000,
           onPrepare: function(){
                 browser.driver.get('http://localhost:8100');
         }
