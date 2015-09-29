@@ -2,7 +2,6 @@
 <section ng-controller='homeCtrl'>
   <ion-view view-title="rand(Cast)">
   <ion-content>
-  <form ng-submit="doSearch(search_term, duration_options[duration_index])"
   <div class='list'>
 
     <div class='input-label'>
@@ -17,15 +16,15 @@
     <h4>Select Genre</h4>
 
     <div class="row">
-      <div class="col pos1">
+      <div class="col pos1" ng-click="setGenre('Comedy')">
         <i class="col material-icons white md-48">mood</i>
         <div class='col col-bottom'>Comedy</div>
       </div>
-      <div class="col pos2">
+      <div class="col pos2" ng-click="setGenre('Sport')">
         <i class="col material-icons white md-48">directions_run</i>
         <div class='col col-bottom'>Sport</div>
       </div>
-      <div class="col pos3">
+      <div class="col pos3" ng-click="setGenre('Entertainment')">
         <i class="col material-icons white md-48">local_movies</i>
         <div class='col col-bottom'>Entertainment</div>
 
@@ -33,37 +32,37 @@
     </div>
 
     <div class="row">
-      <div class="col pos4">
+      <div class="col pos4" ng-click="setGenre('Culture')">
         <i class="col material-icons white md-48">local_library</i>
         <div class='col col-bottom'>Culture</div>
       </div>
-      <div class="col pos5">
+      <div class="col pos5" ng-click="setGenre('Tech')">
         <i class="col material-icons white md-48">keyboard</i>
         <div class='col col-bottom'>Tech</div>
       </div>
-      <div class="col pos6">
+      <div class="col pos6" ng-click="setGenre('Education')">
        <i class="col material-icons white md-48">school</i>
        <div class='col col-bottom'>Education</div>
      </div>
    </div>
 
    <div class="row">
-    <div class="col pos7">
+    <div class="col pos7" ng-click="setGenre('Science')">
       <i class="col material-icons white md-48">content_paste</i>
       <div class='col col-bottom'>Science</div>
     </div>
-    <div class="col pos8">
+    <div class="col pos8" ng-click="setGenre('News')">
       <i class="col material-icons white md-48">public</i>
       <div class='col col-bottom'>News</div>
     </div>
-    <div class="col pos9">
+    <div class="col pos9" ng-click="setGenre('Business')">
       <i class="col material-icons white md-48">business</i>
       <div class='col col-bottom'>Business</div>
     </div>
   </div>
   <div class="button-bar search">
     <button class='button btnsearch button-calm' ui-sref='player'> Feeling Lucky </button>
-    <button class='button btnfeeling button-calm' ui-sref='results'> Search </button>
+    <button class='button btnfeeling button-calm' ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
   </div>
 </ion-content>
 </ion-view>

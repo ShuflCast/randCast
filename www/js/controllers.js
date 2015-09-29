@@ -6,7 +6,13 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
 
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
 
+  $scope.setGenre = function(search_term) {
+    $scope.search_term = search_term;
+    console.log(search_term);
+  };
+
   $scope.doSearch = function(search_term, duration) {
+    console.log('hello');
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
