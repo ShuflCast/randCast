@@ -11,17 +11,14 @@
       <option ng-repeat='option in categories'>{{ option.category }}</option>
     </select>
   </label>
-  <label class='item item-input item-select'>
-    <div class='input-label'>
-      Duration
-    </div>
-    <div class="item range range-positive">
-      <i class='icon ion-minus'></i>
-      <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
-      <i class='icon ion-plus'></i>
-      <p>{{ duration_options[duration_index] }}</p>
-    </div>
-  </label>
+  <div class='input-label'>
+    <p>Duration: {{ duration_options[duration_index] }}</p>
+  </div>
+  <div class="item range range-positive">
+    <i class='icon ion-minus'></i>
+    <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
+    <i class='icon ion-plus'></i>
+  </div>
 </div>
 <button type='submit' class='button button-block'> Search </button>
 </form>
