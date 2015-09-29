@@ -35,8 +35,6 @@ angular.module('starter.services', [])
       if (duration_options[i].name === duration) {
         min = duration_options[i].min;
         max = duration_options[i].max;
-        console.log(min);
-        console.log(max);
       };
     };
   };
