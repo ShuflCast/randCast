@@ -9,7 +9,7 @@
         <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
-          <p>{{ result.description }}</p>
+          <p ng-bind-html="result.description"></p>
         </div>
         <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
       </a>

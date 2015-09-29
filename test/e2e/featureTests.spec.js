@@ -40,4 +40,10 @@ describe('randCast', function() {
     results.get(0).click()
     expect(browser.getTitle()).toEqual('Player');
   });
+
+  it('goes straight to player page when searching with lucky button', function() {
+    element(by.id('comedy')).click();
+    element(by.id('luckyBtn')).click();
+    expect(browser.getTitle()).toEqual('Player');
+  });
 });
