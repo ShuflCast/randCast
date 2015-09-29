@@ -33,6 +33,12 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
     ApiCall.setTrack(result);
     $state.go('player');
   }
+
+  $scope.doRefresh = function() {
+    console.log('poo')
+    $scope.results = ApiCall.getResults();
+    $scope.$broadcast('scroll.refreshComplete');
+  }
 })
 
 app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
