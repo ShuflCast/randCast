@@ -55,10 +55,9 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
 
 app.filter('durationFilter', function(ApiCall) {
 
- var min = ApiCall.returnMin();
- var max = ApiCall.returnMax();
-
  return function(items) {
+   var min = ApiCall.returnMin();
+   var max = ApiCall.returnMax();
    var filtered = [];
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
