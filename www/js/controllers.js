@@ -1,6 +1,6 @@
 var app = angular.module('starter.controllers', ['ionic'])
 
-.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
 
   $scope.categories = categories;
 
@@ -35,8 +35,7 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
   }
 })
 
-.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
-
+app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
   $scope.trackOptions = ApiCall.getTrack();
 
