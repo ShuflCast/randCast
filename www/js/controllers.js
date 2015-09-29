@@ -1,13 +1,27 @@
 var app = angular.module('starter.controllers', ['ionic'])
 
-app.controller('homeCtrl', function($scope, ApiCall, $state) {
+.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
 
   $scope.categories = categories;
 
-  $scope.doSearch = function(search_term, duration) {
-    ApiCall.makeCall(search_term, duration).then(function() {
-      $state.go('results');
-    })
+  $scope.doSearch = function(search_term) {
+    if (search_term === undefined) {
+      $scope.showAlert();
+    } else {
+      ApiCall.makeCall(search_term).then(function() {
+        $state.go('results');
+      })
+    }
+  };
+
+  // An alert dialog
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Alert',
+      template: 'Please select a genre'
+    });
+    alertPopup.then(function(res) {
+    });
   };
 })
 
