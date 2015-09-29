@@ -2,7 +2,7 @@ var app = angular.module('starter.controllers', ['ionic'])
 
 var filteredTracks;
 
-app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
   $scope.categories = categories;
 
@@ -35,7 +35,6 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       }).then(function() {
         $filter('durationFilter')($scope.results);
         $scope.filteredResults = filteredTracks;
-        console.log($scope.filteredResults);
       }).then(function() {
         $scope.track = $scope.filteredResults[0];
       }).then(function() {
@@ -57,7 +56,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 })
 
-app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
+app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage) {
 
   $scope.results = ApiCall.getResults();
 
@@ -72,7 +71,7 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
   }
 })
 
-app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
+app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $localstorage) {
 
 
   $scope.trackOptions = ApiCall.getTrack();
@@ -83,12 +82,28 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
     show: $scope.trackOptions.show_title,
     art: $scope.trackOptions.image_urls.full,
     description: $scope.trackOptions.description
-  }
+  };
 
   $scope.shareAnywhere = function() {
     $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
+  };
+
+  $scope.addToBookmarked = function() {
+    $localstorage.setObject('podcast', {
+      name: 'Emily!',
+      info: $scope.myTrack
+    })
+  };
+
+  $scope.seeBookmarks = function() {
+    var post = $localstorage.getObject('podcast');
+    console.log(post);
+  };
+
+  $scope.deleteFromBookmarks = function() {
+    // ADD SOMETHING!!!
   }
-})
+});
 
 app.filter('durationFilter', function(ApiCall) {
 
@@ -100,10 +115,10 @@ app.filter('durationFilter', function(ApiCall) {
      var item = items[i];
      if (item.duration >= min && item.duration <= max) {
       console.log(item.duration)
-       filtered.push(item);
-     }
-   }
-   filteredTracks = filtered;
-   return filtered;
- };
+      filtered.push(item);
+    }
+  }
+  filteredTracks = filtered;
+  return filtered;
+};
 });

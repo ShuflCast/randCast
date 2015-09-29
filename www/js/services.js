@@ -96,4 +96,15 @@ angular.module('starter.services', ['angular-loading-bar'])
     }
   };
 
-});
+})
+
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}]);
