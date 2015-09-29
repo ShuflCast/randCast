@@ -1,30 +1,29 @@
 <ion-view view-title="Home">
-  <ion-content>
-    <form ng-submit="doSearch(search_term, duration)"
-      <div class='list'>
-        <label class='item item-input item-select'>
-          <div class='input-label'>
-            Genre
-          </div>
-          <select ng-model='search_term'>
-            <option value='' disabled selected style='display:none;'>select your genre</option>
-            <option ng-repeat='option in categories'>{{ option.category }}</option>
-          </select>
-        </label>
-        <label class='item item-input item-select'>
-          <div class='input-label'>
-            Duration
-          </div>
-          <select ng-model='duration'>
-            <option value='' disabled selected style='display:none;'>select your duration</option>
-            <option>1 - 15</option>
-            <option>15 - 45</option>
-            <option>45 - 90</option>
-            <option>90 +</option>
-          </select>
-        </label>
-      </div>
-      <button type='submit' class='button button-block'> Search </button>
-    </form>
-  </ion-content>
+<ion-content>
+<form ng-submit="doSearch(search_term, duration_options[duration_index])"
+<div class='list'>
+  <label class='item item-input item-select'>
+    <div class='input-label'>
+      Genre
+    </div>
+    <select ng-model='search_term'>
+      <option value='' disabled selected style='display:none;'>select your genre</option>
+      <option ng-repeat='option in categories'>{{ option.category }}</option>
+    </select>
+  </label>
+  <label class='item item-input item-select'>
+    <div class='input-label'>
+      Duration
+    </div>
+    <div class="item range range-positive">
+      <i class='icon ion-minus'></i>
+      <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
+      <i class='icon ion-plus'></i>
+      <p>{{ duration_options[duration_index] }}</p>
+    </div>
+  </label>
+</div>
+<button type='submit' class='button button-block'> Search </button>
+</form>
+</ion-content>
 </ion-view>
