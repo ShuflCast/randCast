@@ -5,8 +5,20 @@ var filteredTracks;
 app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, Auth) {
 
   $scope.login = function() {
-    Auth.$authWithOAuthRedirect("facebook");
+    Auth.logIn.$authWithOAuthRedirect("facebook");
+    console.log('logged in')
   };
+
+  // $scope.users = Users;
+  // $scope.addUser = function() {
+  // var name = prompt("What do you need to buy?");
+  //   if (name) {
+  //     $scope.users.$add({
+  //       "name": name
+  //       });
+  //     }
+  //   };
+  // });
 
   $scope.categories = categories;
 
