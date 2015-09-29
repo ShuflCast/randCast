@@ -1,13 +1,13 @@
 <ion-view view-title="Results">
   <ion-content>
     <div class='list list-inset'>
-      <a ng-click='showPlayer(result)' ng-repeat='result in results' class='item item-thumbnail-left item-text-wrap'>
-        <img src="{{ result.urls.image }}">
+      <a ng-click='setPlayer(result)' ng-repeat='result in results | durationFilter' class='item item-thumbnail-left item-text-wrap'>
+        <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
           <p>{{ result.description }}</p>
         </div>
-        <p>Duration: {{ result.duration | time: 'mm:ss' }} mins</p>
+        <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
       </a>
     </div>
   </ion-content>
