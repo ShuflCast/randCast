@@ -1,4 +1,8 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['angular-loading-bar'])
+
+.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+  cfpLoadingBarProvider.includeSpinner = false;
+}])
 
 .factory('ApiCall', function($http) {
 
