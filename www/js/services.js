@@ -81,7 +81,9 @@ angular.module('starter.services', ['angular-loading-bar'])
     },
 
     getResults: function() {
-      return results;
+      return results.sort(function() {
+        return 0.5 - Math.random();
+      });
     },
 
     setTrack: function(result) {
