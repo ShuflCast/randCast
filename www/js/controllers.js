@@ -37,6 +37,7 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
 
 app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
+
   $scope.trackOptions = ApiCall.getTrack();
 
   $scope.myTrack = {
