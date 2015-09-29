@@ -4,28 +4,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
 
   $scope.categories = categories;
 
-  $scope.durations = [
-    {
-      'name': '1 - 15',
-      'min': 1,
-      'max': 899
-    },
-    {
-      'name': '15 - 45',
-      'min': 900,
-      'max': 2699
-    },
-    {
-      'name': '45 - 90',
-      'min': 2700,
-      'max': 5399
-    },
-    {
-      'name': '90 +',
-      'min': 5400,
-      'max': 999999999
-    }
-  ];
+  $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
 
   $scope.doSearch = function(search_term, duration) {
     if (search_term === undefined) {
