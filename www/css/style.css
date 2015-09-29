@@ -1,6 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
-/*headers*/
+                /*homepage*/
+/******************headers******************/
 
 h4 {
   text-align: center;
@@ -8,14 +9,8 @@ h4 {
   margin-top: 5px;
 }
 
-/*radio button*/
 
-input[type="radio"]:checked {
-  display: none;
-}
-
-
-/*icons*/
+/******************icons******************/
 
 div.col {
   text-align: center;
@@ -36,9 +31,25 @@ div.col.col-bottom {
 .col.pos9 {
   text-align: center;
   margin: 3px;
-  border-radius: 20%;
+  border-radius: 15%;
+  background: #60B2E5;
 }
 
+
+/*.col.pos1,
+.col.pos2,
+.col.pos3,
+.col.pos4,
+.col.pos5,
+.col.pos6,
+.col.pos7,
+.col.pos8,
+.col.pos9 {
+  text-align: center;
+  margin: 3px;
+  border-radius: 20%;
+}*/
+/*
 .col.pos1 {
   background: #e5f2e5;
   border: solid #e5f2e5;
@@ -56,7 +67,7 @@ div.col.col-bottom {
 
 .col.pos4 {
   background: #ffdb99;
-  /*border: solid #ffdb99;*/
+  border: solid #ffdb99;
   border: solid yellow;
 }
 
@@ -75,7 +86,7 @@ div.col.col-bottom {
 }
 
 .col.pos8 {
-  /*background: #edf69f;*/
+  /*background: #edf69f;
   background: white;
   border: solid #edf69f;
 }
@@ -85,11 +96,7 @@ div.col.col-bottom {
 }
 
 
-/*different sized icons*/
-
-.material-icons.md-24 {
-  font-size: 24px;
-}
+/******************different sized icons******************/
 
 .material-icons.md-36 {
   font-size: 36px;
@@ -101,14 +108,14 @@ div.col.col-bottom {
 }
 
 
-/*white icons*/
+/******************white icons******************/
 
 .material-icons.white {
   color: white;
 }
 
 
-/*colored icons*/
+/******************colored icons******************/
 
 .material-icons.white {
   color: #white;
@@ -123,20 +130,53 @@ div.col.col-bottom {
 }
 
 
-/*rows background*/
+/******************font******************/
 
-div.row {
-  background: #004080;
+.col.col-bottom {
+  color: white;
 }
 
 
-/*duartion bar*/
+/******************selected genre******************/
+
+.col.pos1:active {
+  background: red;
+}
+
+
+/******************rows background******************/
+
+/*div.row {
+  background: #747274;
+}*/
+
+
+/******************search/feeling lucky button******************/
+
+.button.btnfeeling {
+  float: right;
+}
+
+.button.btnsearch {
+  float: left;
+}
+
+.button.btnfeeling,
+.button.btnsearch {
+  margin: 5px !important;
+  border-radius: 8px !important;
+
+}
+
+
+              /*results page*/
+/******************podcast description******************/
+
 .description {
     line-height: 1em;
     height: 2em;
     overflow: hidden;
     white-space: nowrap;
-
     text-overflow: ellipsis;
     width: 100%;
 }
@@ -145,9 +185,9 @@ div.row {
   padding-bottom: 8px;
 }
 
-.custom-button {
-  border-style: none;
-}
+
+                /*player page*/
+/******************podcast image******************/
 
 img {
   height: 265px;
@@ -158,6 +198,15 @@ img {
   padding-bottom: 0;
 }
 
+
+/******************play button*****************/
+
+.custom-button {
+  border-style: none;
+}
+
+
+/******************loading spinner******************/
 .spinner svg {
   stroke: red;
   display: inline-block;
