@@ -54,10 +54,9 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
 app.filter('durationFilter', function(ApiCall) {
 
- var min = ApiCall.returnMin();
- var max = ApiCall.returnMax();
-
  return function(items) {
+   var min = ApiCall.returnMin();
+   var max = ApiCall.returnMax();
    var filtered = [];
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
@@ -66,5 +65,7 @@ app.filter('durationFilter', function(ApiCall) {
      }
    }
    return filtered;
+   console.log(min)
+   console.log(max)
  };
 });
