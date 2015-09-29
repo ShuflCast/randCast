@@ -1,5 +1,10 @@
 angular.module('starter.services', ['angular-loading-bar'])
 
+.factory("Auth", function($firebaseAuth) {
+  var usersRef = new Firebase("https//randcast.firebaseio.com/users");
+  return $firebaseAuth(usersRef);
+})
+
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;
 }])

@@ -2,7 +2,11 @@ var app = angular.module('starter.controllers', ['ionic'])
 
 var filteredTracks;
 
-app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, Auth) {
+
+  $scope.login = function() {
+    Auth.$authWithOAuthRedirect("facebook");
+  };
 
   $scope.categories = categories;
 

@@ -1,6 +1,16 @@
 
   <ion-view view-title="rand(Cast)">
   <ion-content>
+    <div ng-hide="authData" class="card" ng-click="login()">
+      <button class="item">
+      Log In with Facebook
+      </button>
+    </div>
+    <div class="card" ng-show="authData">
+      <div class="item item-text-wrap">
+        Hello {{authData.facebook.displayName}}!
+      </div>
+    </div>
   <div class='list'>
 
     <div class='input-label'>
