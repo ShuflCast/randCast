@@ -1,10 +1,19 @@
 var app = angular.module('starter.controllers', ['ionic'])
 
-app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
+var filteredTracks;
+
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter) {
 
   $scope.categories = categories;
 
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
+
+  $scope.duration_index = 1;
+
+  $scope.setGenre = function(search_term) {
+    $scope.search_term = search_term;
+    console.log(search_term);
+  };
 
   $scope.doSearch = function(search_term, duration) {
     if (search_term === undefined) {
@@ -12,8 +21,29 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
     } else {
       ApiCall.makeCall(search_term, duration).then(function() {
         $state.go('results');
-      })
-    }
+      });
+    };
+  };
+
+  $scope.feelingLucky = function(search_term, duration) {
+    if (search_term === undefined) {
+      $scope.showAlert();
+    } else {
+      ApiCall.makeCall(search_term, duration)
+      .then(function() {
+        $scope.results = ApiCall.getResults();
+      }).then(function() {
+        $filter('durationFilter')($scope.results);
+        $scope.filteredResults = filteredTracks;
+        console.log($scope.filteredResults);
+      }).then(function() {
+        $scope.track = $scope.filteredResults[0];
+      }).then(function() {
+        ApiCall.setTrack($scope.track);
+      }).then(function() {
+        $state.go('player');
+      });
+    };
   };
 
   // An alert dialog
@@ -69,11 +99,11 @@ app.filter('durationFilter', function(ApiCall) {
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
      if (item.duration >= min && item.duration <= max) {
+      console.log(item.duration)
        filtered.push(item);
      }
    }
+   filteredTracks = filtered;
    return filtered;
-   console.log(min)
-   console.log(max)
  };
 });

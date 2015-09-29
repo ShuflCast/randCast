@@ -39,8 +39,6 @@ angular.module('starter.services', ['angular-loading-bar'])
       if (duration_options[i].name === duration) {
         min = duration_options[i].min;
         max = duration_options[i].max;
-        console.log(min);
-        console.log(max);
       };
     };
   };

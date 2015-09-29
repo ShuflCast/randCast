@@ -4,31 +4,31 @@ categories = [
     'id': 1
   },
   {
-    'category': 'Sports & Recreation', 
+    'category': 'Sport', 
     'id': 2
   },
   {
-    'category': 'Business & Finance', 
+    'category': 'Business', 
     'id': 3
   },
   {
-    'category': 'Society & Culture', 
+    'category': 'Culture', 
     'id': 5
   },
   {
-    'category': 'Arts & Entertainment', 
+    'category': 'Entertainment', 
     'id': 6
   },
   {
-    'category': 'News & Politics',
+    'category': 'News',
     'id': 7
   },
   {
-    'category': 'Technology',
+    'category': 'Tech',
     'id': 8
   },
   {
-    'category': 'Science & Medicine', 
+    'category': 'Science', 
     'id': 65
   },
   {
