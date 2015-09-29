@@ -1,4 +1,9 @@
 <ion-view view-title="Player">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear" ng-click="shareAnywhere()">
+      <i class='icon ion-share'></i>
+    </button>
+  </ion-nav-buttons>
   <ion-content>
     <ion-audio-track track="myTrack">
       <ion-slide-box on-slide-changed="slideHasChanged($index)">
@@ -15,9 +20,9 @@
               <ion-audio-progress-bar display-time></ion-audio-progress-bar>
             </div>
             <ion-audio-controls>
-            <div class='spinner'>
-              <ion-spinner icon="ripple"></ion-spinner>
-            </div>
+              <div class='spinner'>
+                <ion-spinner icon="ripple"></ion-spinner>
+              </div>
               <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class='tab-item' href="#">
                   <i class='icon ion-skip-backward'></i>

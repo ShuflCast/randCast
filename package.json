@@ -20,6 +20,7 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-media",
+    "cordova-plugin-socialsharing",
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [

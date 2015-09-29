@@ -1,6 +1,6 @@
 var app = angular.module('starter.controllers', ['ionic'])
 
-app.controller('homeCtrl', function($scope, ApiCall, $state) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup) {
 
   $scope.categories = categories;
 
@@ -28,9 +28,23 @@ app.controller('homeCtrl', function($scope, ApiCall, $state) {
   ];
 
   $scope.doSearch = function(search_term, duration) {
-    ApiCall.makeCall(search_term, duration).then(function() {
-      $state.go('results');
-    })
+    if (search_term === undefined) {
+      $scope.showAlert();
+    } else {
+      ApiCall.makeCall(search_term, duration).then(function() {
+        $state.go('results');
+      })
+    }
+  };
+
+  // An alert dialog
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Alert',
+      template: 'Please select a genre'
+    });
+    alertPopup.then(function(res) {
+    });
   };
 })
 
@@ -42,10 +56,9 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
     ApiCall.setTrack(result);
     $state.go('player');
   }
-
 })
 
-app.controller('playerCtrl', function($scope, ApiCall) {
+app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
 
   $scope.trackOptions = ApiCall.getTrack();
 
@@ -57,14 +70,16 @@ app.controller('playerCtrl', function($scope, ApiCall) {
     description: $scope.trackOptions.description
   }
 
+  $scope.shareAnywhere = function() {
+    $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
+  }
 })
 
 app.filter('durationFilter', function(ApiCall) {
 
- var min = ApiCall.returnMin();
- var max = ApiCall.returnMax();
-
  return function(items) {
+   var min = ApiCall.returnMin();
+   var max = ApiCall.returnMax();
    var filtered = [];
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
@@ -73,5 +88,7 @@ app.filter('durationFilter', function(ApiCall) {
      }
    }
    return filtered;
+   console.log(min)
+   console.log(max)
  };
 });
