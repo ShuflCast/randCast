@@ -67,5 +67,7 @@ app.filter('durationFilter', function(ApiCall) {
      }
    }
    return filtered;
+   console.log(min)
+   console.log(max)
  };
 });
