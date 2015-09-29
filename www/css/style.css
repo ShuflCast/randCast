@@ -1,0 +1,36 @@
+/* Empty. Add your own CSS if you like */
+.description {
+    line-height: 1em;
+    height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.item {
+  padding-bottom: 8px;
+}
+
+.custom-button {
+  border-style: none;
+}
+
+img {
+  height: 265px;
+  width: 265px !important;
+}
+
+.item.item-image {
+  padding-bottom: 0;
+}
+
+.spinner svg {
+  stroke: red;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.popup-body {
+  text-align: center;
+}

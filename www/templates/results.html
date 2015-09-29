@@ -1,0 +1,18 @@
+<ion-view view-title="Results">
+  <ion-content>
+    <ion-refresher
+      pulling-text= 'Pull to refresh...'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class='list list-inset'>
+      <a ng-click='setPlayer(result)' ng-repeat='result in results | durationFilter | limitTo: 5' class='item item-thumbnail-left item-text-wrap'>
+        <img src="{{ result.image_urls.thumb }}">
+        <h3>{{ result.title }}</h3>
+        <div class="description">
+          <p>{{ result.description }}</p>
+        </div>
+        <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
