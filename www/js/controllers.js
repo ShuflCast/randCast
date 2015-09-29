@@ -35,7 +35,6 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
   }
 
   $scope.doRefresh = function() {
-    console.log('poo')
     $scope.results = ApiCall.getResults();
     $scope.$broadcast('scroll.refreshComplete');
   }
