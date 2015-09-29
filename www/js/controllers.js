@@ -4,11 +4,11 @@ var app = angular.module('starter.controllers', ['ionic'])
 
   $scope.categories = categories;
 
-  $scope.doSearch = function(search_term) {
+  $scope.doSearch = function(search_term, duration) {
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
-      ApiCall.makeCall(search_term).then(function() {
+      ApiCall.makeCall(search_term, duration).then(function() {
         $state.go('results');
       })
     }
