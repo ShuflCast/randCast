@@ -19,10 +19,10 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
     ApiCall.setTrack(result);
     $state.go('player');
   }
-
 })
 
-app.controller('playerCtrl', function($scope, ApiCall) {
+.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
+
 
   $scope.trackOptions = ApiCall.getTrack();
 
@@ -34,6 +34,9 @@ app.controller('playerCtrl', function($scope, ApiCall) {
     description: $scope.trackOptions.description
   }
 
+  $scope.shareAnywhere = function() {
+    $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
+  }
 })
 
 app.filter('durationFilter', function(ApiCall) {
