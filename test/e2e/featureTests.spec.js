@@ -6,17 +6,17 @@ describe('randCast', function() {
   })
 
   it('has a title', function() {
-    expect(browser.getTitle()).toEqual('Home');
+    expect(browser.getTitle()).toEqual('rand(Cast)');
   });
 
   it('goes to results page upon searching', function() {
-    element(by.cssContainingText('option', 'Comedy')).click();
+    element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     expect(browser.getTitle()).toEqual('Results');
   });
 
   it('returns a list of results', function() {
-    element(by.cssContainingText('option', 'Comedy')).click();
+    element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     var results = element.all(by.repeater('result in results'));
     results.then(function(result) {
@@ -25,7 +25,7 @@ describe('randCast', function() {
   });
 
   it('returns no more than 5 results', function() {
-    element(by.cssContainingText('option', 'Comedy')).click();
+    element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     var results = element.all(by.repeater('result in results'));
     results.then(function(result) {
@@ -34,7 +34,7 @@ describe('randCast', function() {
   });
 
   it('goes to player page upon selecting a podcast', function() {
-    element(by.cssContainingText('option', 'Comedy')).click();
+    element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     var results = element.all(by.repeater('result in results'));
     results.get(0).click()
