@@ -1,0 +1,14 @@
+<ion-view view-title="Bookmarks">
+  <ion-content>
+    <div class='list list-inset'>
+      <a ng-click='setPlayer(result)' ng-repeat='result in bookmarks' class='item item-thumbnail-left item-text-wrap'>
+        <img src="{{ result.info.art }}">
+        <h3>{{ result.info.episode }}</h3>
+        <div class="description">
+          <p>{{ result.info.description }}</p>
+        </div>
+        <p>Duration: {{ result.info.duration | time: ':mm:ss' }}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

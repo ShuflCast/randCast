@@ -9,20 +9,20 @@ angular.module('starter', ['ionic', 'ionic-audio', 'ngCordova', 'starter.control
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if (window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+  if (window.cordova && window.cordova.plugins.Keyboard) {
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  }
+  if (window.StatusBar) {
+    StatusBar.styleDefault();
+  }
+});
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-    .state('home', {
+  .state('home', {
     url: '/',
     templateUrl: 'templates/home.html',
     controller: 'homeCtrl'
@@ -38,6 +38,12 @@ angular.module('starter', ['ionic', 'ionic-audio', 'ngCordova', 'starter.control
     url: '/player',
     templateUrl: 'templates/player.html',
     controller: 'playerCtrl'
+  })
+
+  .state('bookmarks', {
+    url: '/bookmarks',
+    templateUrl: 'templates/bookmarks.html',
+    controller: 'bookmarksCtrl'
   })
 
   $urlRouterProvider.otherwise('/')

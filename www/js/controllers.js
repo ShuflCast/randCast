@@ -16,6 +16,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 
   $scope.doSearch = function(search_term, duration) {
+
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
@@ -43,6 +44,10 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
         $state.go('player');
       });
     };
+  };
+
+  $scope.seeBookmarks = function() {
+    $state.go('bookmarks');
   };
 
   // An alert dialog
@@ -81,28 +86,33 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
     episode: $scope.trackOptions.title,
     show: $scope.trackOptions.show_title,
     art: $scope.trackOptions.image_urls.full,
-    description: $scope.trackOptions.description
+    description: $scope.trackOptions.description,
+    duration: $scope.trackOptions.duration
   };
 
   $scope.shareAnywhere = function() {
     $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
   };
 
-  $scope.addToBookmarked = function() {
-    $localstorage.setObject('podcast', {
-      name: 'Emily!',
+  $scope.addBookmark = function() {
+    $scope.keyName = $scope.myTrack.episode + '-' + $scope.myTrack.show;
+    $localstorage.setObject($scope.keyName, {
       info: $scope.myTrack
     })
   };
 
-  $scope.seeBookmarks = function() {
-    var post = $localstorage.getObject('podcast');
-    console.log(post);
-  };
-
-  $scope.deleteFromBookmarks = function() {
-    // ADD SOMETHING!!!
+  $scope.deleteBookmark = function(key) {
+    $localstorage.deleteObject(key);
   }
+});
+
+app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage) {
+  $scope.bookmarks = $localstorage.getObjects();
+
+  $scope.setPlayer = function(result) {
+    ApiCall.setTrack(result);
+    $state.go('player');
+  };
 });
 
 app.filter('durationFilter', function(ApiCall) {
@@ -114,7 +124,6 @@ app.filter('durationFilter', function(ApiCall) {
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
      if (item.duration >= min && item.duration <= max) {
-      console.log(item.duration)
       filtered.push(item);
     }
   }
