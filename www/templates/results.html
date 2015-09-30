@@ -1,19 +1,25 @@
 <ion-view view-title="Results">
   <ion-content>
-    <ion-refresher
-      pulling-text= 'Pull to refresh...'
-      on-refresh="doRefresh()">
+    <ion-refresher pulling-text='Pull to refresh...' on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
       <ion-item ng-repeat='result in results | durationFilter | limitTo: 5' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
-          <p>{{ result.description }}</p>
+          <p ng-bind-html="result.description"></p>
         </div>
+        <p class='resultsduration'>{{ result.duration | secondsToDateTime | date:'m'}} min</p>
+      <a ng-if="filteredResults.length === 0" class="item ">
+      <div class="nopodcast">
+        <h2>No Podcasts available</h2>
+        <img src="../img/cassette2.jpg">
+        <p>Select another genre or duration</p>
+        </div>
+      </a>
         <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
         <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
-        </ion-option-button>  
+        </ion-option-button>
       </ion-item>
       </ion-list>
   </ion-content>

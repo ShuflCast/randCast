@@ -23,8 +23,10 @@
               <div class='spinner'>
                 <ion-spinner icon="ripple"></ion-spinner>
               </div>
-              <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class='tab-item' ion-audio-play></a>
+              <div class="item tabs tabs-secondary">
+                <a class='tab-item button button-icon button-large' ion-audio-play></a>
+                <a class="tab-item"><i class="icon ion-bookmark" ></i>
+                </a>
               </div>
             </ion-audio-controls>
           </div>
@@ -36,7 +38,7 @@
               <h2>Description</h2>
             </div>
             <div class="item item-body">
-              <p>{{ track.description }}</p>
+              <p ng-bind-html="track.description"></p>
             </div>
           </div>
         </ion-slide>
