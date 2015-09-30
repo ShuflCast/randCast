@@ -5,10 +5,10 @@
 
 /******************headers******************/
 
-h4 {
-  text-align: center;
+h5 {
   margin-bottom: 5px;
   margin-top: 5px;
+  margin-left: 10px;
 }
 
 /******************icons******************/
@@ -78,7 +78,7 @@ input[type=radio]:checked +.genre.material-icons.white {
 
 .input-label {
   padding: 0;
-  width: 150px;
+  width: 200px;
 }
 
 
@@ -112,8 +112,17 @@ input[type=radio]:checked +.genre.material-icons.white {
   padding-bottom: 8px;
 }
 
-/*player page*/
 
+.resultsduration {
+  /*float: right;*/
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px
+}
+
+/*player page*/
 
 /******************podcast image******************/
 
