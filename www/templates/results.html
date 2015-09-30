@@ -4,15 +4,17 @@
       pulling-text= 'Pull to refresh...'
       on-refresh="doRefresh()">
     </ion-refresher>
-    <div class='list list-inset'>
-      <a ng-click='setPlayer(result)' ng-repeat='result in results | durationFilter | limitTo: 5' class='item item-thumbnail-left item-text-wrap'>
+    <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
+      <ion-item ng-repeat='result in results | durationFilter | limitTo: 5' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
           <p>{{ result.description }}</p>
         </div>
         <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
-      </a>
-    </div>
+        <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
+        </ion-option-button>  
+      </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>

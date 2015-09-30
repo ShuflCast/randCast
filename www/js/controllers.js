@@ -41,6 +41,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       }).then(function() {
         ApiCall.setTrack($scope.track);
       }).then(function() {
+        console.log('HELLLOOOOO')
         $state.go('player');
       });
     };
@@ -63,12 +64,30 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
 
 app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage) {
 
+  $scope.listCanSwipe = true;
   $scope.results = ApiCall.getResults();
 
   $scope.setPlayer = function(result) {
     ApiCall.setTrack(result);
     $state.go('player');
   }
+
+  $scope.addBookmark = function(result) {
+    console.log('CAROLINE MANZO!')
+    console.log(result)
+    $scope.keyName = result.title + '-' + result.show_title;
+    $localstorage.setObject($scope.keyName, {
+      bookmark: {
+        url: result.audio_files[0].mp3,
+        episode: result.title,
+        show: result.show_title,
+        art: result.image_urls.full,
+        art_small: result.image_urls.thumb,
+        description: result.description,
+        duration: result.duration
+      }
+    })
+  };
 
   $scope.doRefresh = function() {
     $scope.results = ApiCall.getResults();
@@ -78,17 +97,7 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
 
 app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $localstorage) {
 
-
-  $scope.trackOptions = ApiCall.getTrack();
-
-  $scope.myTrack = {
-    url: $scope.trackOptions.audio_files[0].mp3,
-    episode: $scope.trackOptions.title,
-    show: $scope.trackOptions.show_title,
-    art: $scope.trackOptions.image_urls.full,
-    description: $scope.trackOptions.description,
-    duration: $scope.trackOptions.duration
-  };
+  $scope.myTrack = ApiCall.getTrack();
 
   $scope.shareAnywhere = function() {
     $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
@@ -97,22 +106,25 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
   $scope.addBookmark = function() {
     $scope.keyName = $scope.myTrack.episode + '-' + $scope.myTrack.show;
     $localstorage.setObject($scope.keyName, {
-      info: $scope.myTrack
+      bookmark: $scope.myTrack
     })
   };
-
-  $scope.deleteBookmark = function(key) {
-    $localstorage.deleteObject(key);
-  }
 });
 
-app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage) {
+app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state) {
   $scope.bookmarks = $localstorage.getObjects();
+
+  $scope.listCanSwipe = true;
 
   $scope.setPlayer = function(result) {
     ApiCall.setTrack(result);
     $state.go('player');
   };
+
+  $scope.deleteBookmark = function(key) {
+    console.log(key)
+    $localstorage.deleteObject(key);
+  }
 });
 
 app.filter('durationFilter', function(ApiCall) {

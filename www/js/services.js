@@ -87,19 +87,27 @@ angular.module('starter.services', ['angular-loading-bar'])
     },
 
     setTrack: function(result) {
-      if (result.length !== 6) {
-        track = 
+      console.log(result)
+      if (result.bookmark != undefined) {
+        track = result['bookmark'];
       }
-      track = result;
+      else {
+        track = {
+          url: result.audio_files[0].mp3,
+          episode: result.title,
+          show: result.show_title,
+          art: result.image_urls.full,
+          art_small: result.image_urls.thumb,
+          description: result.description,
+          duration: result.duration
+        };
+      };
       return track;
-
     },
-
     getTrack: function() {
       return track;
     }
   };
-
 })
 
 .factory('$localstorage', ['$window', function($window) {
