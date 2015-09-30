@@ -10,6 +10,25 @@ describe('randCast', function() {
   });
 
   it('goes to results page upon searching', function() {
+    var slider = element(by.id('durationSelect'))
+    browser.actions().dragAndDrop(
+      slider, {
+        x: 100,
+        y: 0
+      }
+    ).perform();
+    element(by.id('comedy')).click();
+    element(by.id('searchBtn')).click();
+    expect(browser.getTitle()).toEqual('Results');
+  });
+
+  // it('pops up an error when no genre selected', function() {
+  //   element(by.id('searchBtn')).click();
+  //   expect(page).toContain("Please select a genre");
+  // });
+
+
+  it('goes to results page upon searching', function() {
     element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     expect(browser.getTitle()).toEqual('Results');
