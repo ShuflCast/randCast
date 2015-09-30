@@ -1,6 +1,9 @@
 /* Empty. Add your own CSS if you like */
 
-                /*homepage*/
+
+/*homepage*/
+
+
 /******************headers******************/
 
 h4 {
@@ -9,32 +12,20 @@ h4 {
   margin-top: 5px;
 }
 
-
 /******************icons******************/
 
 div.col {
   text-align: center;
 }
-
 div.col.col-bottom {
   padding: 0;
 }
-
-.col.pos1,
-.col.pos2,
-.col.pos3,
-.col.pos4,
-.col.pos5,
-.col.pos6,
-.col.pos7,
-.col.pos8,
-.col.pos9 {
+.col.pos1, .col.pos2, .col.pos3, .col.pos4, .col.pos5, .col.pos6, .col.pos7, .col.pos8, .col.pos9 {
   text-align: center;
   margin: 3px;
   border-radius: 15%;
   background: #60B2E5;
 }
-
 
 /*.col.pos1,
 .col.pos2,
@@ -49,6 +40,8 @@ div.col.col-bottom {
   margin: 3px;
   border-radius: 20%;
 }*/
+
+
 /*
 .col.pos1 {
   background: #e5f2e5;
@@ -100,13 +93,12 @@ div.col.col-bottom {
 
 .material-icons.md-36 {
   font-size: 36px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
   padding: 0;
 }
-
+/*.material-icons.md-48 {
+  font-size: 48px;
+  padding: 0;
+}*/
 
 /******************white icons******************/
 
@@ -114,21 +106,17 @@ div.col.col-bottom {
   color: white;
 }
 
-
 /******************colored icons******************/
 
 .material-icons.white {
   color: #white;
 }
-
 .material-icons.black {
   color: black;
 }
-
 .material-icons.red {
   color: #e09999;
 }
-
 
 /******************font******************/
 
@@ -136,15 +124,14 @@ div.col.col-bottom {
   color: white;
 }
 
-
 /******************selected genre******************/
 
 .col.pos1:active {
   background: red;
 }
 
-
 /******************rows background******************/
+
 
 /*div.row {
   background: #747274;
@@ -156,48 +143,43 @@ div.col.col-bottom {
 .button.btnfeeling {
   float: right;
 }
-
 .button.btnsearch {
   float: left;
 }
-
-.button.btnfeeling,
-.button.btnsearch {
+.button.btnfeeling, .button.btnsearch {
   margin: 5px !important;
   border-radius: 8px !important;
-
 }
 
+/*results page*/
 
-              /*results page*/
+
 /******************podcast description******************/
 
 .description {
-    line-height: 1em;
-    height: 2em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
+  line-height: 1em;
+  height: 2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
-
 .item {
   padding-bottom: 8px;
 }
 
+/*player page*/
 
-                /*player page*/
+
 /******************podcast image******************/
 
 img {
   height: 265px;
   width: 265px !important;
 }
-
 .item.item-image {
   padding-bottom: 0;
 }
-
 
 /******************play button*****************/
 
@@ -205,14 +187,27 @@ img {
   border-style: none;
 }
 
-
 /******************loading spinner******************/
+
 .spinner svg {
   stroke: red;
   display: inline-block;
   vertical-align: middle;
 }
-
 .popup-body {
   text-align: center;
+}
+
+/******************genre selection******************/
+
+.row input {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+input[type=radio]:checked +.genre.material-icons.white {
+  color: black;
+}
+.genre {
+  background: #60B2E5;
 }
