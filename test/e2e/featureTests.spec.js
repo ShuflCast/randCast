@@ -10,6 +10,25 @@ describe('randCast', function() {
   });
 
   it('goes to results page upon searching', function() {
+    var slider = element(by.id('durationSelect'))
+    browser.actions().dragAndDrop(
+      slider, {
+        x: 100,
+        y: 0
+      }
+    ).perform();
+    element(by.id('comedy')).click();
+    element(by.id('searchBtn')).click();
+    expect(browser.getTitle()).toEqual('Results');
+  });
+
+  // it('pops up an error when no genre selected', function() {
+  //   element(by.id('searchBtn')).click();
+  //   expect(page).toContain("Please select a genre");
+  // });
+
+
+  it('goes to results page upon searching', function() {
     element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
     expect(browser.getTitle()).toEqual('Results');
@@ -38,6 +57,12 @@ describe('randCast', function() {
     element(by.id('searchBtn')).click();
     var results = element.all(by.repeater('result in results'));
     results.get(0).click()
+    expect(browser.getTitle()).toEqual('Player');
+  });
+
+  it('goes straight to player page when searching with lucky button', function() {
+    element(by.id('comedy')).click();
+    element(by.id('luckyBtn')).click();
     expect(browser.getTitle()).toEqual('Player');
   });
 });
