@@ -2,7 +2,7 @@ var app = angular.module('starter.controllers', ['ionic'])
 
 var filteredTracks;
 
-app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
   $scope.categories = categories;
 
@@ -16,6 +16,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 
   $scope.doSearch = function(search_term, duration) {
+
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
@@ -35,15 +36,19 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       }).then(function() {
         $filter('durationFilter')($scope.results);
         $scope.filteredResults = filteredTracks;
-        console.log($scope.filteredResults);
       }).then(function() {
         $scope.track = $scope.filteredResults[0];
       }).then(function() {
         ApiCall.setTrack($scope.track);
       }).then(function() {
+        console.log('HELLLOOOOO')
         $state.go('player');
       });
     };
+  };
+
+  $scope.seeBookmarks = function() {
+    $state.go('bookmarks');
   };
 
   // An alert dialog
@@ -57,8 +62,9 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 })
 
-app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
+app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage) {
 
+  $scope.listCanSwipe = true;
   $scope.results = ApiCall.getResults();
 
   $scope.setPlayer = function(result) {
@@ -66,29 +72,60 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state) {
     $state.go('player');
   }
 
+  $scope.addBookmark = function(result) {
+    console.log('CAROLINE MANZO!')
+    console.log(result)
+    $scope.keyName = result.title + '-' + result.show_title;
+    $localstorage.setObject($scope.keyName, {
+      bookmark: {
+        url: result.audio_files[0].mp3,
+        episode: result.title,
+        show: result.show_title,
+        art: result.image_urls.full,
+        art_small: result.image_urls.thumb,
+        description: result.description,
+        duration: result.duration
+      }
+    })
+  };
+
   $scope.doRefresh = function() {
     $scope.results = ApiCall.getResults();
     $scope.$broadcast('scroll.refreshComplete');
   }
 })
 
-app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing) {
+app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $localstorage) {
 
-
-  $scope.trackOptions = ApiCall.getTrack();
-
-  $scope.myTrack = {
-    url: $scope.trackOptions.audio_files[0].mp3,
-    episode: $scope.trackOptions.title,
-    show: $scope.trackOptions.show_title,
-    art: $scope.trackOptions.image_urls.full,
-    description: $scope.trackOptions.description
-  }
+  $scope.myTrack = ApiCall.getTrack();
 
   $scope.shareAnywhere = function() {
     $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
+  };
+
+  $scope.addBookmark = function() {
+    $scope.keyName = $scope.myTrack.episode + '-' + $scope.myTrack.show;
+    $localstorage.setObject($scope.keyName, {
+      bookmark: $scope.myTrack
+    })
+  };
+});
+
+app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state) {
+  $scope.bookmarks = $localstorage.getObjects();
+
+  $scope.listCanSwipe = true;
+
+  $scope.setPlayer = function(result) {
+    ApiCall.setTrack(result);
+    $state.go('player');
+  };
+
+  $scope.deleteBookmark = function(key) {
+    console.log(key)
+    $localstorage.deleteObject(key);
   }
-})
+});
 
 app.filter('durationFilter', function(ApiCall) {
 
@@ -99,13 +136,12 @@ app.filter('durationFilter', function(ApiCall) {
    for (var i = 0; i < items.length; i++) {
      var item = items[i];
      if (item.duration >= min && item.duration <= max) {
-      console.log(item.duration)
-       filtered.push(item);
-     }
-   }
-   filteredTracks = filtered;
-   return filtered;
- };
+      filtered.push(item);
+    }
+  }
+  filteredTracks = filtered;
+  return filtered;
+};
 });
 
 app.filter('secondsToDateTime', [function() {

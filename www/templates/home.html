@@ -65,10 +65,24 @@
           <div class='col col-bottom'>Business</div>
         </div>
       </div>
-
-      <div class="button-bar search">
-        <button class='button btnsearch button-calm' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
-        <button class='button btnfeeling button-calm' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
-      </div>
-  </ion-content>
+   <div class="row">
+    <div class="col pos7" id="science" ng-click="setGenre('Science')">
+      <i class="col material-icons white md-48">content_paste</i>
+      <div class='col col-bottom'>Science</div>
+    </div>
+    <div class="col pos8" id="news" ng-click="setGenre('News')">
+      <i class="col material-icons white md-48">public</i>
+      <div class='col col-bottom'>News</div>
+    </div>
+    <div class="col pos9" id="business" ng-click="setGenre('Business')">
+      <i class="col material-icons white md-48">business</i>
+      <div class='col col-bottom'>Business</div>
+    </div>
+  </div>
+  <div class="button-bar search">
+  <button class='button btnsearch button-calm' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
+    <button class='button btnfeeling button-calm' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
+    <button class='button btnfeeling button-calm' id="searchBtn" ng-click="seeBookmarks()"> Bookmarks </button>
+  </div>
+</ion-content>
 </ion-view>

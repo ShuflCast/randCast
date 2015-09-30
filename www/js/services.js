@@ -11,26 +11,26 @@ angular.module('starter.services', ['angular-loading-bar'])
   var max = null;
   var track = [];
   var duration_options = [
-    {
-      'name': '1 - 15',
-      'min': 1,
-      'max': 899
-    },
-    {
-      'name': '15 - 45',
-      'min': 900,
-      'max': 2699
-    },
-    {
-      'name': '45 - 90',
-      'min': 2700,
-      'max': 5399
-    },
-    {
-      'name': '90 +',
-      'min': 5400,
-      'max': 999999999
-    }
+  {
+    'name': '1 - 15',
+    'min': 1,
+    'max': 899
+  },
+  {
+    'name': '15 - 45',
+    'min': 900,
+    'max': 2699
+  },
+  {
+    'name': '45 - 90',
+    'min': 2700,
+    'max': 5399
+  },
+  {
+    'name': '90 +',
+    'min': 5400,
+    'max': 999999999
+  }
   ];
 
   var filter_duration = function(duration) {
@@ -47,8 +47,8 @@ angular.module('starter.services', ['angular-loading-bar'])
     var result = -1;
     data.some(function (item, i) {
       if (item[property] === value) {
-          result = i;
-          return true;
+        result = i;
+        return true;
       }
     });
     return result;
@@ -87,13 +87,45 @@ angular.module('starter.services', ['angular-loading-bar'])
     },
 
     setTrack: function(result) {
-      track = result;
+      console.log(result)
+      if (result.bookmark != undefined) {
+        track = result['bookmark'];
+      }
+      else {
+        track = {
+          url: result.audio_files[0].mp3,
+          episode: result.title,
+          show: result.show_title,
+          art: result.image_urls.full,
+          art_small: result.image_urls.thumb,
+          description: result.description,
+          duration: result.duration
+        };
+      };
       return track;
     },
-
     getTrack: function() {
       return track;
     }
   };
+})
 
-});
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObjects: function() {
+      var values = [],
+      keys = Object.keys(localStorage),
+      i = keys.length;
+      while ( i-- ) {
+        values.push( JSON.parse($window.localStorage.getItem(keys[i])) );
+      }
+      return values;
+    },
+    deleteObject: function(key) {
+      $window.localStorage.removeItem(key);
+    }
+  }
+}]);

@@ -2,22 +2,25 @@
   <ion-content>
     <ion-refresher pulling-text='Pull to refresh...' on-refresh="doRefresh()">
     </ion-refresher>
-    <div class='list list-inset'>
-      <a ng-click='setPlayer(result)' ng-repeat='result in filteredResults = (results | durationFilter | limitTo: 5)' class='item item-thumbnail-left item-text-wrap'>
+    <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
+      <ion-item ng-if="filteredResults.length === 0" class="item ">
+      <div class="nopodcast">
+        <h2>No Podcasts available</h2>
+        <img src="../img/cassette2.jpg">
+        <p>Select another genre or duration</p>
+        </div>
+      </ion-item>
+      <ion-item ng-repeat='result in filteredResults = (results | durationFilter | limitTo: 5)' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">
           <p ng-bind-html="result.description"></p>
         </div>
         <p class='resultsduration'>{{ result.duration | secondsToDateTime | date:'m'}} min</p>
-      </a>
-      <a ng-if="filteredResults.length === 0" class="item ">
-      <div class="nopodcast">
-        <h2>No Podcasts available</h2>
-        <img src="../img/cassette2.jpg">
-        <p>Select another genre or duration</p>
-        </div>
-      </a>
-    </div>
+        <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
+        <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
+        </ion-option-button>
+      </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>
