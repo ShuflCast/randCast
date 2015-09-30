@@ -11,7 +11,7 @@
         <div class="description">
           <p ng-bind-html="result.description"></p>
         </div>
-        <p>Duration: {{ result.duration | time: ':mm:ss' }}</p>
+        <p class='resultsduration'>{{ result.duration | secondsToDateTime | date:'mm'}} min</p>
       </a>
     </div>
   </ion-content>
