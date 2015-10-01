@@ -1,11 +1,11 @@
 <ion-view view-title="Bookmarks">
-  <ion-content>
+  <ion-content  class="background">
     <ion-list ng-controller="bookmarksCtrl" can-swipe="listCanSwipe">
-      <ion-item ng-animate=" 'animate' " ng-repeat='result in bookmarks' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
+      <ion-item ng-animate=" 'animate' " ng-repeat='result in bookmarks' class='desc item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.bookmark.art_small }}">
         <h3>{{ result.bookmark.episode }}</h3>
         <div class="description">
-          <p>{{ result.bookmark.description }}</p>
+          <p ng-bind-html="result.bookmark.description"></p>
         </div>
         <p class='resultsduration'>{{ result.bookmark.duration | secondsToDateTime }} min</p>
         <ion-option-button type='button' value='delete' ng-click="deleteBookmark(result.bookmark.episode + '-' + result.bookmark.show)" class="button-info ion-ios-trash-outline">

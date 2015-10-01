@@ -4,18 +4,18 @@
       <i class='icon ion-ios-bookmarks-outline'></i>
     </button>
   </ion-nav-buttons>
-  <ion-content>
+  <ion-content class="background" >
 
     <div class='list'>
       <div class='input-label'>
         <h5 class='duration'>Duration: {{ duration_options[duration_index] }} min</h4>
       </div>
-      <div class="item range range-positive">
-        <i class='icon ion-clock'></i>
+      <div class="item range range-home range-assertive">
+        <i class='icon ion-clock duration'></i>
         <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
       </div>
 
-      <h5>Select Genre</h4>
+      <h5 class='duration'>Select Genre</h4>
 
         <div class="row">
           <div class="col pos1">
@@ -72,8 +72,8 @@
         </div>
 
         <div class="button-bar search">
-          <button class='button btnsearch button-calm' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
-          <button class='button btnfeeling button-calm' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
+          <button class='button btnsearch button-assertive' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
+          <button class='button btnfeeling button-assertive' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
         </div>
   </ion-content>
 </ion-view>
