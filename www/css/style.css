@@ -1,12 +1,14 @@
 /* Empty. Add your own CSS if you like */
 
+
                 /*homepage*/
+
 /******************headers******************/
 
-h4 {
-  text-align: center;
+h5 {
   margin-bottom: 5px;
   margin-top: 5px;
+  margin-left: 10px;
 }
 
 
@@ -36,63 +38,20 @@ div.col.col-bottom {
 }
 
 
-/*.col.pos1,
-.col.pos2,
-.col.pos3,
-.col.pos4,
-.col.pos5,
-.col.pos6,
-.col.pos7,
-.col.pos8,
-.col.pos9 {
-  text-align: center;
-  margin: 3px;
-  border-radius: 20%;
-}*/
-/*
-.col.pos1 {
-  background: #e5f2e5;
-  border: solid #e5f2e5;
+/******************genre selection******************/
+
+.row input {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
 }
 
-.col.pos2 {
-  background: #9999ff;
-  border: solid #9999ff;
+input[type=radio]:checked +.genre.material-icons.white {
+  color: black;
 }
 
-.col.pos3 {
-  background: #9feff6;
-  border: solid #9feff6;
-}
-
-.col.pos4 {
-  background: #ffdb99;
-  border: solid #ffdb99;
-  border: solid yellow;
-}
-
-.col.pos5 {
-  background: #cc99cc;
-  border: solid #cc99cc;
-}
-
-.col.pos6 {
-  background: #99cc99;
-  border: solid #99cc99;
-}
-
-.col.pos7 {
-  border: solid #999999;
-}
-
-.col.pos8 {
-  /*background: #edf69f;
-  background: white;
-  border: solid #edf69f;
-}
-
-.col.pos9 {
-  border: solid #e09999;
+.genre {
+  background: #60B2E5;
 }
 
 
@@ -100,10 +59,6 @@ div.col.col-bottom {
 
 .material-icons.md-36 {
   font-size: 36px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
   padding: 0;
 }
 
@@ -115,40 +70,16 @@ div.col.col-bottom {
 }
 
 
-/******************colored icons******************/
-
-.material-icons.white {
-  color: #white;
-}
-
-.material-icons.black {
-  color: black;
-}
-
-.material-icons.red {
-  color: #e09999;
-}
-
-
 /******************font******************/
 
 .col.col-bottom {
   color: white;
 }
 
-
-/******************selected genre******************/
-
-.col.pos1:active {
-  background: red;
+.input-label {
+  padding: 0;
+  width: 200px;
 }
-
-
-/******************rows background******************/
-
-/*div.row {
-  background: #747274;
-}*/
 
 
 /******************search/feeling lucky button******************/
@@ -156,37 +87,45 @@ div.col.col-bottom {
 .button.btnfeeling {
   float: right;
 }
-
 .button.btnsearch {
   float: left;
 }
-
-.button.btnfeeling,
-.button.btnsearch {
+.button.btnfeeling, .button.btnsearch {
   margin: 5px !important;
   border-radius: 8px !important;
-
 }
 
-
-              /*results page*/
+                  /*results page*/
 /******************podcast description******************/
 
 .description {
-    line-height: 1em;
-    height: 2em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
+  line-height: 1em;
+  height: 2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
-
 .item {
   padding-bottom: 8px;
 }
 
 
-                /*player page*/
+.resultsduration {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px
+}
+
+.nopodcast {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+                  /*player page*/
+
 /******************podcast image******************/
 
 img {
@@ -199,20 +138,13 @@ img {
 }
 
 
-/******************play button*****************/
-
-.custom-button {
-  border-style: none;
-}
-
-
 /******************loading spinner******************/
+
 .spinner svg {
   stroke: red;
   display: inline-block;
   vertical-align: middle;
 }
-
 .popup-body {
   text-align: center;
 }
