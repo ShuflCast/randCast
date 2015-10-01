@@ -35,7 +35,7 @@ I would like to be able to serach for a random selection of podcasts
 
 ````
 As a person with limited interests
-So that I can listen to something that I am interested in
+So that I can listen to something that interests me
 I would like to be able to receive random podcasts based on my interests
 ````
 
@@ -60,3 +60,32 @@ So that I can share and recommend podcasts I have enjoyed
 I would like to be able to share these on other social media platforms
 ````
 
+````
+As a person who is searching for a podcast
+So that I know if know there are no results found for my selection
+I would like to be notified of this 
+````
+
+````
+As a person listening to a podcast
+So that I can save the current podcast
+I would like to be able to save the podcast I am listening too
+````
+
+````
+As a person who has saved a podcast
+So that I can return to it and continue to liten to it
+I would like to be able to find all my saved podcasts in my bookmarks
+````
+
+````
+As a person who has saved podcasts
+So that I can delete saved podcasts I have finished with
+I would like to be able to delete them from my bookmarks
+````
+
+````
+As a person who likes more then 1 podcast in the results page
+So that I can save these to listen to at a later date
+I would like to be able to save the podcast to my bookmarks
+````
