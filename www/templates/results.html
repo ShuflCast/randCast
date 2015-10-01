@@ -1,5 +1,5 @@
 <ion-view view-title="Results">
-  <ion-content>
+  <ion-content  style="background: #F9F9F9">
     <ion-refresher pulling-text='Pull to refresh...' on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
@@ -10,7 +10,7 @@
           <p>Select another genre or duration</p>
         </div>
       </ion-item>
-      <ion-item ng-repeat='result in filteredResults = (results | durationFilter | limitTo: 5)' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
+      <ion-item ng-repeat='result in filteredResults = (results | durationFilter | limitTo: 5)' class='desc item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.image_urls.thumb }}">
         <h3>{{ result.title }}</h3>
         <div class="description">

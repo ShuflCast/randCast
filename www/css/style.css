@@ -34,7 +34,7 @@ div.col.col-bottom {
   text-align: center;
   margin: 3px;
   border-radius: 15%;
-  background: #60B2E5;
+  background: #698Be8;
 }
 
 
@@ -47,11 +47,11 @@ div.col.col-bottom {
 }
 
 input[type=radio]:checked +.genre.material-icons.white {
-  color: black;
+  color: #333333;
 }
 
 .genre {
-  background: #60B2E5;
+  background: #698Be8;
 }
 
 
@@ -147,4 +147,12 @@ img {
 }
 .popup-body {
   text-align: center;
+}
+
+.item {
+  border-style: none;
+}
+
+.desc {
+  border-style: solid;
 }

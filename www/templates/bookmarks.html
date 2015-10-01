@@ -1,7 +1,7 @@
 <ion-view view-title="Bookmarks">
-  <ion-content>
+  <ion-content  style="background: #F9F9F9">
     <ion-list ng-controller="bookmarksCtrl" can-swipe="listCanSwipe">
-      <ion-item ng-repeat='result in bookmarks track by result.bookmark.url' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
+      <ion-item ng-repeat='result in bookmarks track by result.bookmark.url' class='desc item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
         <img src="{{ result.bookmark.art_small }}">
         <h3>{{ result.bookmark.episode }}</h3>
 
