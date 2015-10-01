@@ -20,11 +20,9 @@
               <ion-audio-progress-bar display-time></ion-audio-progress-bar>
             </div>
             <ion-audio-controls>
-              <div class='spinner'>
-                <ion-spinner icon="ripple"></ion-spinner>
-              </div>
               <div class="item tabs tabs-secondary">
                 <a class='tab-item button button-icon button-large' ion-audio-play></a>
+                <ion-spinner icon="ripple" class='spinner'></ion-spinner>
                 <a class="tab-item">
                   <button class="button button-clear button-dark" ng-click="addBookmark()">
                     <i class="icon ion-bookmark"></i>
@@ -33,7 +31,6 @@
               </div>
             </ion-audio-controls>
           </div>
-          <!-- <button class='button' ng-click="addBookmark()"> Add </button> -->
         </ion-slide>
         <ion-slide>
           <div class='list card'>
