@@ -4,6 +4,22 @@ var filteredTracks;
 
 app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
+  // $scope.login = function() {
+  //   Auth.logIn.$authWithOAuthRedirect("facebook");
+  //   console.log('logged in')
+  // };
+
+  // $scope.users = Users;
+  // $scope.addUser = function() {
+  // var name = prompt("What do you need to buy?");
+  //   if (name) {
+  //     $scope.users.$add({
+  //       "name": name
+  //       });
+  //     }
+  //   };
+  // });
+
   $scope.categories = categories;
 
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
