@@ -4,22 +4,6 @@ var filteredTracks;
 
 app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
-  // $scope.login = function() {
-  //   Auth.logIn.$authWithOAuthRedirect("facebook");
-  //   console.log('logged in')
-  // };
-
-  // $scope.users = Users;
-  // $scope.addUser = function() {
-  // var name = prompt("What do you need to buy?");
-  //   if (name) {
-  //     $scope.users.$add({
-  //       "name": name
-  //       });
-  //     }
-  //   };
-  // });
-
   $scope.categories = categories;
 
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
@@ -43,24 +27,41 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 
   $scope.feelingLucky = function(search_term, duration) {
-    if (search_term === undefined) {
-      $scope.showAlert();
-    } else {
-      ApiCall.makeCall(search_term, duration)
-        .then(function() {
-          $scope.results = ApiCall.getResults();
-        }).then(function() {
-          $filter('durationFilter')($scope.results);
-          $scope.filteredResults = filteredTracks;
-        }).then(function() {
-          $scope.track = $scope.filteredResults[0];
-        }).then(function() {
-          ApiCall.setTrack($scope.track);
-        }).then(function() {
-          console.log('HELLLOOOOO')
-          $state.go('player');
-        });
-    };
+    // if (search_term === undefined) {
+    //   $scope.showAlert();
+    // } else {
+    //   ApiCall.makeCall(search_term, duration)
+    //     .then(function() {
+    //       $scope.results = ApiCall.getResults();
+    //     }).then(function() {
+    //       $filter('durationFilter')($scope.results);
+    //       $scope.filteredResults = filteredTracks;
+    //     }).then(function() {
+    //       $scope.track = $scope.filteredResults[0];
+    //     }).then(function() {
+    //       ApiCall.setTrack($scope.track);
+    //     }).then(function() {
+    //       console.log('HELLLOOOOO')
+    //       $state.go('player');
+    //     });
+    // };
+    $scope.track = {
+        "title": 'ep.428 Toby vs. Antonio',
+        "show_title": 'Ping Pong Hour',
+        "image_urls": {
+          "full": "../img/retesh.jpg"
+          },
+        "description": "Welcome back to Ping Pong Hour. This time around we are bringing you the silky sounds of Toby 'T-Bag' Clarke and Antonio 'Vicious' Voce from the Makers Academy Ping Pong stadium. Strap your ears down for the epic sounds of Ping verus Pong, the likes of which you have never heard before.",
+        "duration": 3666,
+        "audio_files": [
+          {
+            "mp3": "https://www.audiosear.ch/media/2f39e010fb34212ce8f6a6c19d2bce0b/0/public/audio_file/6356/208115894-nottoodeepwithgrace-ep-24-nikki-limo.mp3"
+          }
+          ]
+        }
+
+      ApiCall.setTrack($scope.track)
+    $state.go('player');
   };
 
   $scope.seeBookmarks = function() {
