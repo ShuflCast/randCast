@@ -16,7 +16,7 @@
         <div class="description">
           <p ng-bind-html="result.description"></p>
         </div>
-        <p class='resultsduration'>{{ result.duration | secondsToDateTime | date:'m'}} min</p>
+        <p class='resultsduration'>{{ result.duration | secondsToDateTime }} min</p>
         <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
         </ion-option-button>
       </ion-item>

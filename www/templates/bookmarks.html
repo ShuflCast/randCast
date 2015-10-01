@@ -7,7 +7,7 @@
         <div class="description">
           <p>{{ result.bookmark.description }}</p>
         </div>
-        <p class='resultsduration'>{{ result.bookmark.duration | secondsToDateTime | date:'m'}} min</p>
+        <p class='resultsduration'>{{ result.bookmark.duration | secondsToDateTime }} min</p>
         <ion-option-button type='button' value='delete' ng-click="deleteBookmark(result.bookmark.episode + '-' + result.bookmark.show)" class="button-info ion-ios-trash-outline">
         </ion-option-button>
       </ion-item>
