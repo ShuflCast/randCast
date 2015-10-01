@@ -1,9 +1,9 @@
 <ion-view view-title="Results">
-  <ion-content  style="background: #F9F9F9">
+  <ion-content  class="background">
     <ion-refresher pulling-text='Pull to refresh...' on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
-      <ion-item ng-if="filteredResults.length === 0" class="item ">
+      <ion-item ng-if="filteredResults.length === 0" class="item">
         <div class="nopodcast">
           <h2>No Podcasts available</h2>
           <img src="img/cassette2.png">
@@ -17,7 +17,7 @@
           <p ng-bind-html="result.description"></p>
         </div>
         <p class='resultsduration'>{{ result.duration | secondsToDateTime | date:'m'}} min</p>
-        <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
+        <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark results">
         </ion-option-button>
       </ion-item>
     </ion-list>

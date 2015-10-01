@@ -3,7 +3,22 @@
 
                 /*homepage*/
 
+/***********************range***************/
+
+.range-home {
+  background: #FFFCE8;
+}
+
 /******************headers******************/
+
+
+.bar-red.bar {
+  background: #D62430;
+
+}
+title {
+  font: white !important;
+}
 
 h5 {
   margin-bottom: 5px;
@@ -33,8 +48,8 @@ div.col.col-bottom {
 .col.pos9 {
   text-align: center;
   margin: 3px;
-  border-radius: 15%;
-  background: #698Be8;
+  border-radius: 20px;
+  background: rgb(101, 209, 232);
 }
 
 
@@ -47,11 +62,11 @@ div.col.col-bottom {
 }
 
 input[type=radio]:checked +.genre.material-icons.white {
-  color: #333333;
+  color: rgb(48, 86, 135);
 }
 
 .genre {
-  background: #698Be8;
+  background: rgb(101, 209, 232);
 }
 
 
@@ -74,6 +89,8 @@ input[type=radio]:checked +.genre.material-icons.white {
 
 .col.col-bottom {
   color: white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .input-label {
@@ -83,16 +100,21 @@ input[type=radio]:checked +.genre.material-icons.white {
 
 
 /******************search/feeling lucky button******************/
-
+.button-bar.search {
+  padding-top: 10px;
+}
 .button.btnfeeling {
   float: right;
+
 }
 .button.btnsearch {
   float: left;
+
 }
 .button.btnfeeling, .button.btnsearch {
   margin: 5px !important;
   border-radius: 8px !important;
+  font-weight: bold;
 }
 
                   /*results page*/
@@ -155,4 +177,37 @@ img {
 
 .desc {
   border-style: solid;
+}
+
+
+
+.background {
+  background: #FFFCE8;
+}
+
+.duration {
+  padding-top: 15px;
+  color: rgb(48, 86, 135);
+}
+
+.popup-head {
+ padding: 0px;
+ border-bottom: none;
+}
+.popup-body {
+ padding: 20px;
+ overflow: scroll;
+ text-align: center;
+}
+
+.ion-bookmark.results {
+  background: rgb(101, 209, 232);
+  font-size: 30px;
+  color: white;
+}
+
+.ion-ios-trash-outline {
+ background: rgb(232, 47, 45);
+ font-size:30px;
+ color: white;
 }
