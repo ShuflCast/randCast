@@ -5,17 +5,7 @@
     </button>
   </ion-nav-buttons>
   <ion-content class="background" >
-
-    <div class='list'>
-      <div class='input-label'>
-        <h5 class='duration'>Duration: {{ duration_options[duration_index] }} min</h4>
-      </div>
-      <div class="item range range-home range-assertive">
-        <i class='icon ion-clock duration'></i>
-        <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
-      </div>
-
-      <h5 class='duration'>Select Genre</h4>
+      <h5 class='duration'></h5>
 
         <div class="row">
           <div class="col pos1">
@@ -70,10 +60,19 @@
             <div class='col col-bottom'>Business</div>
           </div>
         </div>
+        <div class='list'>
+          <div class='input-label'>
+            <h4 class='duration'>{{ duration_options[duration_index] }} min</h4>
+          </div>
+          <div class="item range range-home range-assertive">
+            <i class='icon ion-clock duration'></i>
+            <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
+          </div>
 
         <div class="button-bar search">
           <button class='button btnsearch button-assertive' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
-          <button class='button btnfeeling button-assertive' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
+          <button class='ion-search button btnfeeling button-assertive' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"></button>
         </div>
+
   </ion-content>
 </ion-view>
