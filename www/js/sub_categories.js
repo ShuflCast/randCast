@@ -1,38 +1,28 @@
-categories = [
-  {
-    'category': 'Comedy', 
-    'id': 1
-  },
-  {
-    'category': 'Sports & Recreation', 
-    'id': 2
-  },
-  {
-    'category': 'Business & Finance', 
-    'id': 3
-  },
-  {
-    'category': 'Society & Culture', 
-    'id': 5
-  },
-  {
-    'category': 'Arts & Entertainment', 
-    'id': 6
-  },
-  {
-    'category': 'News & Politics',
-    'id': 7
-  },
-  {
-    'category': 'Technology',
-    'id': 8
-  },
-  {
-    'category': 'Science & Medicine', 
-    'id': 65
-  },
-  {
-    'category': 'Education', 
-    'id': 9
-  }
-]
+categories = [{
+  'category': 'Comedy',
+  'id': 1
+}, {
+  'category': 'Sport',
+  'id': 2
+}, {
+  'category': 'Business',
+  'id': 3
+}, {
+  'category': 'Culture',
+  'id': 5
+}, {
+  'category': 'Entertainment',
+  'id': 6
+}, {
+  'category': 'News',
+  'id': 7
+}, {
+  'category': 'Tech',
+  'id': 8
+}, {
+  'category': 'Science',
+  'id': 65
+}, {
+  'category': 'Education',
+  'id': 9
+}]
