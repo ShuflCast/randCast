@@ -4,22 +4,6 @@ var filteredTracks;
 
 app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
-  // $scope.login = function() {
-  //   Auth.logIn.$authWithOAuthRedirect("facebook");
-  //   console.log('logged in')
-  // };
-
-  // $scope.users = Users;
-  // $scope.addUser = function() {
-  // var name = prompt("What do you need to buy?");
-  //   if (name) {
-  //     $scope.users.$add({
-  //       "name": name
-  //       });
-  //     }
-  //   };
-  // });
-
   $scope.categories = categories;
 
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
@@ -77,7 +61,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 })
 
-app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage) {
+app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage, $ionicListDelegate) {
 
   $scope.listCanSwipe = true;
   $scope.results = ApiCall.getResults();
@@ -89,7 +73,6 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
 
   $scope.addBookmark = function(result) {
     console.log('CAROLINE MANZO!')
-    console.log(result)
     $scope.keyName = result.title + '-' + result.show_title;
     $localstorage.setObject($scope.keyName, {
       bookmark: {
@@ -102,6 +85,7 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
         duration: result.duration
       }
     })
+    $ionicListDelegate.closeOptionButtons();
   };
 
   $scope.doRefresh = function() {
@@ -126,7 +110,8 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
   };
 });
 
-app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state) {
+app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state, $ionicListDelegate) {
+  
   $scope.bookmarks = $localstorage.getObjects();
 
   $scope.listCanSwipe = true;
@@ -137,8 +122,10 @@ app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state)
   };
 
   $scope.deleteBookmark = function(key) {
-    console.log(key)
+    console.log(key);
     $localstorage.deleteObject(key);
+    $scope.bookmarks = $localstorage.getObjects();
+    $ionicListDelegate.closeOptionButtons();
   }
 });
 
