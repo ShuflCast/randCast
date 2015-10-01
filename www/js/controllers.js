@@ -2,12 +2,12 @@ var app = angular.module('starter.controllers', ['ionic'])
 
 var filteredTracks;
 
-app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, Auth) {
+app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter) {
 
-  $scope.login = function() {
-    Auth.logIn.$authWithOAuthRedirect("facebook");
-    console.log('logged in')
-  };
+  // $scope.login = function() {
+  //   Auth.logIn.$authWithOAuthRedirect("facebook");
+  //   console.log('logged in')
+  // };
 
   // $scope.users = Users;
   // $scope.addUser = function() {
