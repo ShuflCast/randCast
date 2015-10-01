@@ -40,5 +40,11 @@ angular.module('starter', ['ionic', 'ionic-audio', 'ngCordova', 'starter.control
     controller: 'playerCtrl'
   })
 
+  .state('bookmarks', {
+    url: '/bookmarks',
+    templateUrl: 'templates/bookmarks.html',
+    controller: 'bookmarksCtrl'
+  })
+
   $urlRouterProvider.otherwise('/')
 });
