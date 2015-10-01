@@ -49,14 +49,4 @@ describe('factory:ApiCall', function() {
     expect(apiCall.getTrack).toBeDefined();
   })
 
-  // it('calls the Audiosear.ch api correctly', function() {
-  //   categories[index]['id']=1
-  //   apiCall.makeCall()
-  //     .then(function(response) {
-  //       expect(response.status).toEqual(200);
-  //     });
-  //     httpBackend.flush();
-  // })
-
-
 })
