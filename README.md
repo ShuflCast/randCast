@@ -2,6 +2,14 @@ rand(Cast)
 ===========
 [![Build Status]] [![Test Coverage]] [![Code Climate]]
 
+##Team
+
+- [Antonio Voce](https://github.com/7091lapS)
+- [Emily Carson](https://github.com/emily-jane)
+- [Richard Geoghegan](https://github.com/richgeog)
+- [Sivan Patel](https://github.com/sivanpatel)
+- [Toby Clarke](https://github.com/Teeohbee)
+
 ##Task
 
 Create a mobile podcast app that allows users who are busy to search for podcasts that interest them and filter podcasts by duration.
