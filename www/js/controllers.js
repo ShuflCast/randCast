@@ -31,19 +31,19 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       $scope.showAlert();
     } else {
       ApiCall.makeCall(search_term, duration)
-      .then(function() {
-        $scope.results = ApiCall.getResults();
-      }).then(function() {
-        $filter('durationFilter')($scope.results);
-        $scope.filteredResults = filteredTracks;
-      }).then(function() {
-        $scope.track = $scope.filteredResults[0];
-      }).then(function() {
-        ApiCall.setTrack($scope.track);
-      }).then(function() {
-        console.log('HELLLOOOOO')
-        $state.go('player');
-      });
+        .then(function() {
+          $scope.results = ApiCall.getResults();
+        }).then(function() {
+          $filter('durationFilter')($scope.results);
+          $scope.filteredResults = filteredTracks;
+        }).then(function() {
+          $scope.track = $scope.filteredResults[0];
+        }).then(function() {
+          ApiCall.setTrack($scope.track);
+        }).then(function() {
+          console.log('HELLLOOOOO')
+          $state.go('player');
+        });
     };
   };
 
@@ -57,8 +57,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       title: 'Alert',
       template: 'Please select a genre'
     });
-    alertPopup.then(function(res) {
-    });
+    alertPopup.then(function(res) {});
   };
 })
 
@@ -129,23 +128,23 @@ app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state)
 
 app.filter('durationFilter', function(ApiCall) {
 
- return function(items) {
-   var min = ApiCall.returnMin();
-   var max = ApiCall.returnMax();
-   var filtered = [];
-   for (var i = 0; i < items.length; i++) {
-     var item = items[i];
-     if (item.duration >= min && item.duration <= max) {
-      filtered.push(item);
+  return function(items) {
+    var min = ApiCall.returnMin();
+    var max = ApiCall.returnMax();
+    var filtered = [];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      if (item.duration >= min && item.duration <= max) {
+        filtered.push(item);
+      }
     }
-  }
-  filteredTracks = filtered;
-  return filtered;
-};
+    filteredTracks = filtered;
+    return filtered;
+  };
 });
 
 app.filter('secondsToDateTime', [function() {
-    return function(seconds) {
-        return new Date(1970, 0, 1).setSeconds(seconds);
-    };
+  return function(seconds) {
+    return new Date(1970, 0, 1).setSeconds(seconds);
+  };
 }])

@@ -4,10 +4,10 @@
     </ion-refresher>
     <ion-list ng-controller="resultsCtrl" can-swipe="listCanSwipe">
       <ion-item ng-if="filteredResults.length === 0" class="item ">
-      <div class="nopodcast">
-        <h2>No Podcasts available</h2>
-        <img src="img/cassette2.png">
-        <p>Select another genre or duration</p>
+        <div class="nopodcast">
+          <h2>No Podcasts available</h2>
+          <img src="img/cassette2.png">
+          <p>Select another genre or duration</p>
         </div>
       </ion-item>
       <ion-item ng-repeat='result in filteredResults = (results | durationFilter | limitTo: 5)' class='item item-thumbnail-left item-text-wrap' ng-click='setPlayer(result)'>
@@ -20,6 +20,6 @@
         <ion-option-button ng-click="addBookmark(result)" class="button-info ion-bookmark">
         </ion-option-button>
       </ion-item>
-      </ion-list>
+    </ion-list>
   </ion-content>
 </ion-view>
