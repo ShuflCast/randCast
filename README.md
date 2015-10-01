@@ -6,6 +6,19 @@ rand(Cast)
 
 Create a mobile podcast app that allows users who are busy to search for podcasts that interest them and filter podcasts by duration.
 
+##Our Approach
+
+
+##Technologies Used
+
+* Ionic Framework
+* Anjular.js
+* Protrator Testing Framework
+* Audiosearch API
+
+##Challenges
+
+
 ##How to setup
 
 ````
@@ -15,14 +28,14 @@ $ npm install
 $ bower install
 $ ionic state restore
 ````
-To run in the browser `$ ionic serve`, Go to localhost:8100
-To run on IOS `$ ionic run ios`
-To run on Android `$ ionic run android`
+* To run in the browser `$ ionic serve`, Go to localhost:8100
+* To run on IOS `$ ionic run ios`
+* To run on Android `$ ionic run android`
 
 ##Testing
 ###Protractor
-Open terminal and run `$ ionic serve`
-Open a new tab in termianl and run `$ protractor protractor.config.js`
+* Open terminal and run `$ ionic serve`
+* Open a new tab in termianl and run `$ protractor protractor.config.js`
 
 ##MVP 1.0
 ###User Stories
@@ -89,3 +102,6 @@ As a person who likes more then 1 podcast in the results page
 So that I can save these to listen to at a later date
 I would like to be able to save the podcast to my bookmarks
 ````
+
+
+##Future Features
