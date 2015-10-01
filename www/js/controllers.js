@@ -31,19 +31,19 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       $scope.showAlert();
     } else {
       ApiCall.makeCall(search_term, duration)
-        .then(function() {
-          $scope.results = ApiCall.getResults();
-        }).then(function() {
-          $filter('durationFilter')($scope.results);
-          $scope.filteredResults = filteredTracks;
-        }).then(function() {
-          $scope.track = $scope.filteredResults[0];
-        }).then(function() {
-          ApiCall.setTrack($scope.track);
-        }).then(function() {
-          console.log('HELLLOOOOO')
-          $state.go('player');
-        });
+      .then(function() {
+        $scope.results = ApiCall.getResults();
+      }).then(function() {
+        $filter('durationFilter')($scope.results);
+        $scope.filteredResults = filteredTracks;
+      }).then(function() {
+        $scope.track = $scope.filteredResults[0];
+      }).then(function() {
+        ApiCall.setTrack($scope.track);
+      }).then(function() {
+        console.log('HELLLOOOOO')
+        $state.go('player');
+      });
     };
   };
 
@@ -61,7 +61,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 })
 
-app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage, $ionicListDelegate) {
+app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localstorage, $ionicListDelegate, $ionicPopup, $timeout) {
 
   $scope.listCanSwipe = true;
   $scope.results = ApiCall.getResults();
@@ -86,15 +86,26 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
       }
     })
     $ionicListDelegate.closeOptionButtons();
+    $scope.showPopup();
   };
 
   $scope.doRefresh = function() {
     $scope.results = ApiCall.getResults();
     $scope.$broadcast('scroll.refreshComplete');
   }
+
+  $scope.showPopup = function() {
+   $scope.data = {}
+   var myPopup = $ionicPopup.show({
+     template: 'Bookmark Added',
+   })
+   $timeout(function() {
+     myPopup.close();
+   }, 1000);
+ }
 })
 
-app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $localstorage) {
+app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $localstorage, $ionicPopup, $timeout) {
 
   $scope.myTrack = ApiCall.getTrack();
 
@@ -107,11 +118,22 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
     $localstorage.setObject($scope.keyName, {
       bookmark: $scope.myTrack
     })
+    $scope.showPopup();
   };
+
+  $scope.showPopup = function() {
+   $scope.data = {}
+   var myPopup = $ionicPopup.show({
+     template: 'Bookmark Added',
+   })
+   $timeout(function() {
+     myPopup.close();
+   }, 1000);
+ }
 });
 
 app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state, $ionicListDelegate) {
-  
+
   $scope.bookmarks = $localstorage.getObjects();
 
   $scope.listCanSwipe = true;
