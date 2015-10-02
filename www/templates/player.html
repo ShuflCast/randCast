@@ -1,10 +1,10 @@
 <ion-view view-title="Player">
   <ion-nav-buttons side="secondary">
     <button class="button button-clear" ng-click="shareAnywhere()">
-      <i class='icon ion-share'></i>
+      <i class='icon ion-ios-upload-outline'></i>
     </button>
   </ion-nav-buttons>
-  <ion-content>
+  <ion-content class="background">
     <ion-audio-track track="myTrack">
       <ion-slide-box on-slide-changed="slideHasChanged($index)">
         <ion-slide>
@@ -17,10 +17,10 @@
               <img src="{{track.art}}">
             </div>
             <div class="item">
-              <ion-audio-progress-bar display-time></ion-audio-progress-bar>
+              <ion-audio-progress-bar display-time class='range'></ion-audio-progress-bar>
             </div>
             <ion-audio-controls>
-              <div class="item tabs tabs-secondary">
+              <div scroll='false' class="item tabs tabs-secondary">
                 <a class='tab-item button button-icon button-large' ion-audio-play></a>
                 <ion-spinner icon="ripple" class='spinner'></ion-spinner>
                 <a class="tab-item">
