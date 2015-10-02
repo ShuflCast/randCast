@@ -49,7 +49,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
         "title": 'ep.428 Toby vs. Antonio',
         "show_title": 'Ping Pong Hour',
         "image_urls": {
-          "full": "../img/retesh.jpg"
+          "full": "img/retesh.jpg"
           },
         "description": "Welcome back to Ping Pong Hour. This time around we are bringing you the silky sounds of Toby 'T-Bag' Clarke and Antonio 'Vicious' Voce from the Makers Academy Ping Pong stadium. Strap your ears down for the epic sounds of Ping verus Pong, the likes of which you have never heard before.",
         "duration": 3666,
