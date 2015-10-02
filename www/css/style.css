@@ -32,7 +32,7 @@ h5 {
 div.col {
   text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-  
+
 }
 
 div.col.col-bottom {
@@ -188,8 +188,8 @@ img {
 }
 
 h4 {
+  padding-top: 5px; 
   text-align: center;
-  padding-top: 15px;
   color: rgb(48, 86, 135);
   font-size: 13px;
 }
