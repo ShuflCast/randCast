@@ -1,11 +1,8 @@
 exports.config = {
           capabilities: {
-                  // You can use other browsers
-                  // like firefox, phantoms, safari, IE (-_-)
                   'browserName': 'chrome'
           },
           specs: [
-                   // We are going to make this file in a minute
                 'test/e2e/featureTests.spec.js'
           ],
           jasmineNodeOpts: {

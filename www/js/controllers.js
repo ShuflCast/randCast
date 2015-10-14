@@ -4,19 +4,17 @@ var filteredTracks;
 
 app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filter, $localstorage) {
 
-  $scope.categories = categories;
-
   $scope.duration_options = ['1 - 15', '15 - 45', '45 - 90', '90 +'];
 
   $scope.duration_index = 1;
 
   $scope.setGenre = function(search_term) {
+
     $scope.search_term = search_term;
-    console.log(search_term);
   };
 
   $scope.doSearch = function(search_term, duration) {
-
+    console.log('search')
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
@@ -27,6 +25,7 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
   };
 
   $scope.feelingLucky = function(search_term, duration) {
+    console.log('lucky')
     if (search_term === undefined) {
       $scope.showAlert();
     } else {
@@ -41,18 +40,18 @@ app.controller('homeCtrl', function($scope, ApiCall, $state, $ionicPopup, $filte
       }).then(function() {
         ApiCall.setTrack($scope.track);
       }).then(function() {
-        console.log('HELLLOOOOO')
         $state.go('player');
       });
     };
   };
 
   $scope.seeBookmarks = function() {
+
     $state.go('bookmarks');
   };
 
-  // An alert dialog
   $scope.showAlert = function() {
+
     var alertPopup = $ionicPopup.alert({
       title: 'Alert',
       template: 'Please select a genre'
@@ -67,12 +66,13 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
   $scope.results = ApiCall.getResults();
 
   $scope.setPlayer = function(result) {
+
     ApiCall.setTrack(result);
     $state.go('player');
   }
 
   $scope.addBookmark = function(result) {
-    console.log('CAROLINE MANZO!')
+
     $scope.keyName = result.title + '-' + result.show_title;
     $localstorage.setObject($scope.keyName, {
       bookmark: {
@@ -90,11 +90,13 @@ app.controller('resultsCtrl', function($scope, $http, ApiCall, $state, $localsto
   };
 
   $scope.doRefresh = function() {
+
     $scope.results = ApiCall.getResults();
     $scope.$broadcast('scroll.refreshComplete');
   }
 
   $scope.showPopup = function() {
+
    $scope.data = {}
    var myPopup = $ionicPopup.show({
      template: 'Bookmark Added',
@@ -110,10 +112,12 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
   $scope.myTrack = ApiCall.getTrack();
 
   $scope.shareAnywhere = function() {
+
     $cordovaSocialSharing.share("I've just been listening to " + $scope.myTrack.show + " on rand(Cast)", "rand(Cast) - Get shuffling!", $scope.myTrack.art);
   };
 
   $scope.addBookmark = function() {
+
     $scope.keyName = $scope.myTrack.episode + '-' + $scope.myTrack.show;
     $localstorage.setObject($scope.keyName, {
       bookmark: $scope.myTrack
@@ -122,6 +126,7 @@ app.controller('playerCtrl', function($scope, ApiCall, $cordovaSocialSharing, $l
   };
 
   $scope.showPopup = function() {
+
    $scope.data = {}
    var myPopup = $ionicPopup.show({
      template: 'Bookmark Added',
@@ -139,12 +144,13 @@ app.controller('bookmarksCtrl', function($scope, ApiCall, $localstorage, $state,
   $scope.listCanSwipe = true;
 
   $scope.setPlayer = function(result) {
+
     ApiCall.setTrack(result);
     $state.go('player');
   };
 
   $scope.deleteBookmark = function(key) {
-    console.log(key);
+
     $localstorage.deleteObject(key);
     $scope.bookmarks = $localstorage.getObjects();
     $ionicListDelegate.closeOptionButtons();
