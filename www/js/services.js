@@ -10,30 +10,13 @@ angular.module('starter.services', ['angular-loading-bar'])
   var min = null;
   var max = null;
   var track = [];
-  var duration_options = [{
-    'name': '1 - 15',
-    'min': 1,
-    'max': 899
-  }, {
-    'name': '15 - 45',
-    'min': 900,
-    'max': 2699
-  }, {
-    'name': '45 - 90',
-    'min': 2700,
-    'max': 5399
-  }, {
-    'name': '90 +',
-    'min': 5400,
-    'max': 999999999
-  }];
 
   var filter_duration = function(duration) {
 
-    for (i = 0; i < duration_options.length; i++) {
-      if (duration_options[i].name === duration) {
-        min = duration_options[i].min;
-        max = duration_options[i].max;
+    for (i = 0; i < duration_categories.length; i++) {
+      if (duration_categories[i].name === duration) {
+        min = duration_categories[i].min;
+        max = duration_categories[i].max;
       };
     };
   };
@@ -82,7 +65,6 @@ angular.module('starter.services', ['angular-loading-bar'])
     },
 
     setTrack: function(result) {
-      console.log(result)
       if (result.bookmark != undefined) {
         track = result['bookmark'];
       } else {
