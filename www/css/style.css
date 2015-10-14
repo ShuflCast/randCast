@@ -1,8 +1,4 @@
-/* Empty. Add your own CSS if you like */
-
-
                 /*homepage*/
-
 /***********************range***************/
 
 .range-home {
@@ -10,7 +6,6 @@
 }
 
 /******************headers******************/
-
 
 .bar-red.bar {
   background: #D62430;
@@ -25,7 +20,6 @@ h5 {
   margin-top: 5px;
   margin-left: 10px;
 }
-
 
 /******************icons******************/
 
@@ -52,7 +46,6 @@ div.col.col-bottom {
   background: rgb(101, 209, 232);
 }
 
-
 /******************genre selection******************/
 
 .row input {
@@ -69,7 +62,6 @@ input[type=radio]:checked +.genre.material-icons.white {
   background: rgb(101, 209, 232);
 }
 
-
 /******************different sized icons******************/
 
 .material-icons.md-36 {
@@ -77,13 +69,11 @@ input[type=radio]:checked +.genre.material-icons.white {
   padding: 0;
 }
 
-
 /******************white icons******************/
 
 .material-icons.white {
   color: white;
 }
-
 
 /******************font******************/
 
@@ -97,7 +87,6 @@ input[type=radio]:checked +.genre.material-icons.white {
   padding: 0;
   width: 200px;
 }
-
 
 /******************search/feeling lucky button******************/
 .button-bar.search {
@@ -132,7 +121,6 @@ input[type=radio]:checked +.genre.material-icons.white {
   padding-bottom: 8px;
 }
 
-
 .resultsduration {
   font-weight: bold;
   position: absolute;
@@ -147,7 +135,6 @@ input[type=radio]:checked +.genre.material-icons.white {
 }
 
                   /*player page*/
-
 /******************podcast image******************/
 
 img {
@@ -158,7 +145,6 @@ img {
 .item.item-image {
   padding-bottom: 0;
 }
-
 
 /******************loading spinner******************/
 
@@ -178,8 +164,6 @@ img {
 .desc {
   border-style: solid;
 }
-
-
 
 .background {
   background: #FFFCE8;
