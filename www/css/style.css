@@ -25,6 +25,8 @@ h5 {
 
 div.col {
   text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+
 }
 
 div.col.col-bottom {
@@ -42,7 +44,7 @@ div.col.col-bottom {
 .col.pos9 {
   text-align: center;
   margin: 3px;
-  border-radius: 20px;
+  border-radius: 29px;
   background: rgb(101, 209, 232);
 }
 
@@ -169,8 +171,14 @@ img {
   background: #FFFCE8;
 }
 
-.duration {
-  padding-top: 15px;
+h4 {
+  padding-top: 5px; 
+  text-align: center;
+  color: rgb(48, 86, 135);
+  font-size: 13px;
+}
+.duration-position {
+  margin: auto;
   color: rgb(48, 86, 135);
 }
 
@@ -194,4 +202,8 @@ img {
  background: rgb(232, 47, 45);
  font-size:30px;
  color: white;
+}
+
+.row-1 {
+  margin-top: 15px;
 }

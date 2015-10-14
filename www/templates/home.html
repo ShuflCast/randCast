@@ -4,33 +4,23 @@
       <i class='icon ion-ios-bookmarks-outline'></i>
     </button>
   </ion-nav-buttons>
-  <ion-content class="background" >
+  <ion-content scroll='false' class="background" >
+      <h5 class='duration'></h5>
 
-    <div class='list'>
-      <div class='input-label'>
-        <h5 class='duration'>Duration: {{ duration_options[duration_index] }} min</h4>
-      </div>
-      <div class="item range range-home range-assertive">
-        <i class='icon ion-clock duration'></i>
-        <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
-      </div>
-
-      <h5 class='duration'>Select Genre</h4>
-
-        <div class="row">
+        <div class="row row-1">
           <div class="col pos1">
             <input class="genre" name="genreselection" id="comedy" type="radio" ng-click="setGenre('Comedy')">
-            <label class="genre col material-icons white md-36" for="comedy">mood</label>
+            <label class="genre col material-icons white md-36 ion-ios-glasses" for="comedy"></label>
             <div class='col col-bottom'>Comedy</div>
           </div>
           <div class="col pos2">
             <input class="genre" name="genreselection" id="sport" type="radio" ng-click="setGenre('Sport')" />
-            <label class="genre col material-icons white md-36" for="sport">directions_run</label>
+            <label class="genre col material-icons white md-36 ion-ios-football" for="sport"></label>
             <div class='col col-bottom'>Sport</div>
           </div>
           <div class="col pos3">
             <input class="genre" name="genreselection" id="entertainment" type="radio" ng-click="setGenre('Entertainment')" />
-            <label class="genre col material-icons white md-36" for="entertainment">local_movies</label>
+            <label class="genre col material-icons white md-36 ion-ios-film" for="entertainment"></label>
             <div class='col col-bottom'>Entertainment</div>
           </div>
         </div>
@@ -38,17 +28,17 @@
         <div class="row">
           <div class="col pos4">
             <input class="genre" name="genreselection" id="culture" type="radio" ng-click="setGenre('Culture')">
-            <label class="genre col material-icons white md-36" for="culture">local_library</label>
+            <label class="genre col material-icons white md-36 ion-ios-book" for="culture"></label>
             <div class='col col-bottom'>Culture</div>
           </div>
           <div class="col pos5">
             <input class="genre" name="genreselection" id="tech" type="radio" ng-click="setGenre('Tech')" />
-            <label class="genre col material-icons white md-36" for="tech">keyboard</label>
+            <label class="genre col material-icons white md-36 ion-laptop" for="tech"></label>
             <div class='col col-bottom'>Tech</div>
           </div>
           <div class="col pos6">
             <input class="genre" name="genreselection" id="education" type="radio" ng-click="setGenre('Education')" />
-            <label class="genre col material-icons white md-36" for="education">school</label>
+            <label class="genre col material-icons white md-36 ion-university" for="education"></label>
             <div class='col col-bottom'>Education</div>
           </div>
         </div>
@@ -56,24 +46,33 @@
         <div class="row">
           <div class="col pos7">
             <input class="genre" name="genreselection" id="science" type="radio" ng-click="setGenre('Science')">
-            <label class="genre col material-icons white md-36" for="science">content_paste</label>
+            <label class="genre col material-icons white md-36 ion-ios-flask" for="science"></label>
             <div class='col col-bottom'>Science</div>
           </div>
           <div class="col pos8">
             <input class="genre" name="genreselection" id="news" type="radio" ng-click="setGenre('News')" />
-            <label class="genre col material-icons white md-36" for="news">public</label>
+            <label class="genre col material-icons white md-36 ion-ios-world" for="news"></label>
             <div class='col col-bottom'>News</div>
           </div>
           <div class="col pos9">
             <input class="genre" name="genreselection" id="business" type="radio" ng-click="setGenre('Business')" />
-            <label class="genre col material-icons white md-36" for="business">business</label>
+            <label class="genre col material-icons white md-36 ion-ios-briefcase" for="business"></label>
             <div class='col col-bottom'>Business</div>
           </div>
         </div>
+        <div class='list'>
+          <div class='input-label duration-position'>
+            <h4 class='duration'>{{ duration_options[duration_index] }} min</h4>
+          </div>
+          <div class="item range range-home range-assertive">
+            <i class='icon ion-ios-clock-outline duration'></i>
+            <input type="range" name="volume" min="0" max="3" step="1" value="0" ng-model="duration_index">
+          </div>
 
         <div class="button-bar search">
-          <button class='button btnsearch button-assertive' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"> Feeling Lucky </button>
-          <button class='button btnfeeling button-assertive' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"> Search </button>
+          <button class='button btnsearch button-assertive ion-help' id="luckyBtn" ng-click="feelingLucky(search_term, duration_options[duration_index])"></button>
+          <button class='ion-search button btnfeeling button-assertive' id="searchBtn" ng-click="doSearch(search_term, duration_options[duration_index])"></button>
         </div>
+
   </ion-content>
 </ion-view>
