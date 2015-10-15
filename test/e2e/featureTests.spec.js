@@ -22,12 +22,6 @@ describe('randCast', function() {
     expect(browser.getTitle()).toEqual('Results');
   });
 
-  // it('pops up an error when no genre selected', function() {
-  //   element(by.id('searchBtn')).click();
-  //   expect(page).toContain("Please select a genre");
-  // });
-
-
   it('goes to results page upon searching', function() {
     element(by.id('comedy')).click();
     element(by.id('searchBtn')).click();
