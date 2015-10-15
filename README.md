@@ -14,6 +14,8 @@ rand(Cast)
 Rand(Cast) is a podcast-discovery mobile app built in Ionic. The app was one of the final projects at Makers Academy in October 2015.
 Rand(Cast) provides a quick and easy way to discover new podcast episodes based on the duration and categories selected by the user. The episodes can be listened and bookmarked within the app.
 
+[Recorded demo](https://www.youtube.com/watch?v=CnNOxKSKrL8)
+
 ## Approach
 
 * In order to learn the basics of Ionic we spiked a simple ionic app
