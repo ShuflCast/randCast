@@ -1,6 +1,5 @@
 rand(Cast)
 ===========
-[![Build Status]] [![Test Coverage]] [![Code Climate]]
 
 ## Team
 
@@ -10,20 +9,21 @@ rand(Cast)
 - [Sivan Patel](https://github.com/sivanpatel)
 - [Toby Clarke](https://github.com/Teeohbee)
 
-## Task
+## Description
 
-Create a mobile podcast app that allows users who are busy to search for podcasts that interest them and filter podcasts by duration. To have the ability to randomly select a podcast for the genre and duration selected and play this automatically.
+Rand(Cast) is a podcast-discovery mobile app built in Ionic. The app was one of the final projects at Makers Academy in October 2015.
+Rand(Cast) provides a quick and easy way to discover new podcast episodes based on the duration and categories selected by the user. The episodes can be listened and bookmarked within the app.
 
-## Our Approach
+## Approach
 
-* Spiking a basic ionic app
-* researching api's
-* spiked a music playing app
-* started mvp
-* using local storage
-* testing
+* In order to learn the basics of Ionic we spiked a simple ionic app
+* We researched a suitable podcast api
+* We spiked a music playing app
+* Built our desired mvp
+* We implemented bookmarks
+* We added test coverage and improved the look of the app
 
-## Technologies Used
+## Technologies
 
 * Ionic Framework
 * Angular.js
@@ -38,10 +38,10 @@ Create a mobile podcast app that allows users who are busy to search for podcast
 
 ## Challenges
 
-* Ionic
-* api auth for audiosearch
-* split into 2 teams to get audioboom api working
-* testing
+* Learning Ionic from scratch
+* Difficulties with omniauth ajax requests led us to built our back end service with the Audiosear.ch SDK
+* We split into 2 teams to get two different apis working
+* Testing
 
 ## How to setup
 
@@ -56,6 +56,7 @@ $ ionic state restore
 * To run in the browser `$ ionic serve`, Go to localhost:8100
 * To run on ios `$ ionic run ios`
 * To run on Android `$ ionic run android`
+* The app can be installed on ios and android using the respective developer tools
 
 ## Testing
 ### Protractor
@@ -70,7 +71,7 @@ $ ionic state restore
 * We spent sometime researching and choosing which Api would give us the broadest and most amount of podcasts availble to our app. We chose to use [Audiosear.ch](https://www.audiosear.ch/) as our Api as that gave us the best results we were lookig for
 * We decided to spike a music playing app so that we could then understand how to set up an app to play ausion would work.
 * At this stage we were happy with the research and spiking of test apps that we had completed so we began to move into our user stories
-* To TDD our app
+* We added test coverage
 
 #### User Stories
 ````
@@ -93,7 +94,7 @@ I would like to be able to search for podcasts based on my available time
 
 #### Challenges
 
-* The audiosearch Api was proving difficult to use
+* The audiosearch Api proved difficult to use, as its documentation was not very extensive
 * We spent many days trying to overcome our lack of knowledge of testing with Ionic so we could test drive our app. We were unable to find a solution outright, so decided to carry on with the app and return to testing at a later date. We found out that we could use protractor to test our app and we added tests towards the end of the app being completed
 
 ## v2.0
@@ -117,7 +118,7 @@ I would like to be able to share these on other social media platforms
 ````
 As a person who is searching for a podcast
 So that I know if know there are no results found for my selection
-I would like to be notified of this 
+I would like to be notified of this
 ````
 
 ````
@@ -151,3 +152,4 @@ I would like to be able to save the podcast to my bookmarks
 * Episode download progress tracker - A tracker to tell the user that the epidode they have selected is loading
 * Results searching progress tracker - A loading bar to tell the user that the results are being loaded and how much longer it has to complete that search
 * Create a splash screen for the app - A splash screen for the app when it loads
+* Add skip forward and backward buttons
