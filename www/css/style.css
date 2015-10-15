@@ -1,20 +1,143 @@
-/* Empty. Add your own CSS if you like */
-.description {
-    line-height: 1em;
-    height: 2em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
+                /*homepage*/
+/***********************range***************/
+
+.range-home {
+  background: #FFFCE8;
 }
 
+/******************headers******************/
+
+.bar-red.bar {
+  background: #D62430;
+
+}
+title {
+  font: white !important;
+}
+
+h5 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/******************icons******************/
+
+div.col {
+  text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+
+}
+
+div.col.col-bottom {
+  padding: 0;
+}
+
+.col.pos1,
+.col.pos2,
+.col.pos3,
+.col.pos4,
+.col.pos5,
+.col.pos6,
+.col.pos7,
+.col.pos8,
+.col.pos9 {
+  text-align: center;
+  margin: 3px;
+  border-radius: 29px;
+  background: rgb(101, 209, 232);
+}
+
+/******************genre selection******************/
+
+.row input {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+input[type=radio]:checked +.genre.material-icons.white {
+  color: rgb(48, 86, 135);
+}
+
+.genre {
+  background: rgb(101, 209, 232);
+}
+
+/******************different sized icons******************/
+
+.material-icons.md-36 {
+  font-size: 36px;
+  padding: 0;
+}
+
+/******************white icons******************/
+
+.material-icons.white {
+  color: white;
+}
+
+/******************font******************/
+
+.col.col-bottom {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.input-label {
+  padding: 0;
+  width: 200px;
+}
+
+/******************search/feeling lucky button******************/
+.button-bar.search {
+  padding-top: 10px;
+}
+.button.btnfeeling {
+  float: right;
+
+}
+.button.btnsearch {
+  float: left;
+
+}
+.button.btnfeeling, .button.btnsearch {
+  margin: 5px !important;
+  border-radius: 8px !important;
+  font-weight: bold;
+}
+
+                  /*results page*/
+/******************podcast description******************/
+
+.description {
+  line-height: 1em;
+  height: 2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
 .item {
   padding-bottom: 8px;
 }
 
-.custom-button {
-  border-style: none;
+.resultsduration {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px
 }
+
+.nopodcast {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+                  /*player page*/
+/******************podcast image******************/
 
 img {
   height: 265px;
@@ -25,12 +148,62 @@ img {
   padding-bottom: 0;
 }
 
+/******************loading spinner******************/
+
 .spinner svg {
   stroke: red;
   display: inline-block;
   vertical-align: middle;
 }
-
 .popup-body {
   text-align: center;
+}
+
+.item {
+  border-style: none;
+}
+
+.desc {
+  border-style: solid;
+}
+
+.background {
+  background: #FFFCE8;
+}
+
+h4 {
+  padding-top: 5px; 
+  text-align: center;
+  color: rgb(48, 86, 135);
+  font-size: 13px;
+}
+.duration-position {
+  margin: auto;
+  color: rgb(48, 86, 135);
+}
+
+.popup-head {
+ padding: 0px;
+ border-bottom: none;
+}
+.popup-body {
+ padding: 20px;
+ overflow: scroll;
+ text-align: center;
+}
+
+.ion-bookmark.results {
+  background: rgb(101, 209, 232);
+  font-size: 30px;
+  color: white;
+}
+
+.ion-ios-trash-outline {
+ background: rgb(232, 47, 45);
+ font-size:30px;
+ color: white;
+}
+
+.row-1 {
+  margin-top: 15px;
 }
