@@ -1,4 +1,3 @@
-// Describe a feature
 describe('randCast', function() {
 
   beforeEach(function() {
