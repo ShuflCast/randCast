@@ -3,11 +3,11 @@ rand(Cast)
 
 ## Team
 
-<img src="https://avatars2.githubusercontent.com/u/12876467?v=3&s=35">  [Antonio Voce](https://github.com/7091lapS)    
-<img src="https://avatars2.githubusercontent.com/u/12625493?v=3&s=35">  [Emily Carson](https://github.com/emily-jane)  
-<img src="https://avatars2.githubusercontent.com/u/11146599?v=3&s=35">  [Richard Geoghegan](https://github.com/richgeog)  
-<img src="https://avatars2.githubusercontent.com/u/10670079?v=3&s=35">  [Sivan Patel](https://github.com/sivanpatel)  
-<img src="https://avatars2.githubusercontent.com/u/12451318?v=3&s=35">  [Toby Clarke](https://github.com/Teeohbee)
+- <img src="https://avatars2.githubusercontent.com/u/12876467?v=3&s=35">  [Antonio Voce](https://github.com/7091lapS)
+- <img src="https://avatars2.githubusercontent.com/u/12625493?v=3&s=35">  [Emily Carson](https://github.com/emily-jane)
+- <img src="https://avatars2.githubusercontent.com/u/11146599?v=3&s=35">  [Richard Geoghegan](https://github.com/richgeog)
+- <img src="https://avatars2.githubusercontent.com/u/10670079?v=3&s=35">  [Sivan Patel](https://github.com/sivanpatel)
+- <img src="https://avatars2.githubusercontent.com/u/12451318?v=3&s=35">  [Toby Clarke](https://github.com/Teeohbee)
 
 ## Description
 
