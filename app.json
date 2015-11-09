@@ -1,0 +1,7 @@
+{
+    "name": "randcast",
+    "description": "a podcast finding app",
+    "repository": "https://github.com/ShuflCast/randCast",
+    "logo": "",
+    "keywords": ["ionic", "podcasts"]
+}
