@@ -29,307 +29,149 @@
 9 verbose install where, peers [ '/Users/Sivan/Documents/Projects/randCast', [] ]
 10 verbose installManyTop reading for lifecycle /Users/Sivan/Documents/Projects/randCast/package.json
 11 info preinstall randcast@1.0.0
-12 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-mocks/package.json
-13 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-route/package.json
-14 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/bower/package.json
-15 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/express/package.json
-16 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp/package.json
-17 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-concat/package.json
-18 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-minify-css/package.json
-19 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-rename/package.json
-20 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-sass/package.json
-21 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-util/package.json
-22 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/jasmine-core/package.json
-23 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma/package.json
-24 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-jasmine/package.json
-25 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-phantomjs-launcher/package.json
-26 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/phantomjs/package.json
-27 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/shelljs/package.json
-28 info package.json gulp-minify-css@0.3.13 No license field.
-29 info package.json gulp-rename@1.2.2 No license field.
-30 info package.json gulp-util@2.2.20 No license field.
-31 info package.json shelljs@0.3.0 license should be a valid SPDX license expression
-32 verbose readDependencies loading dependencies from /Users/Sivan/Documents/Projects/randCast/package.json
-33 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-mocks/package.json
-34 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-route/package.json
-35 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/bower/package.json
-36 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/express/package.json
-37 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp/package.json
-38 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-concat/package.json
-39 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-minify-css/package.json
-40 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-rename/package.json
-41 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-sass/package.json
-42 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-util/package.json
-43 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/jasmine-core/package.json
-44 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma/package.json
-45 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-jasmine/package.json
-46 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-phantomjs-launcher/package.json
-47 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/phantomjs/package.json
-48 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/shelljs/package.json
-49 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/bower/package.json
-50 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/gulp/package.json
-51 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/karma/package.json
-52 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/phantomjs/package.json
-53 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/shjs/package.json
-54 verbose already installed skipping bower@^1.3.3 /Users/Sivan/Documents/Projects/randCast
-55 verbose already installed skipping gulp-util@^2.2.14 /Users/Sivan/Documents/Projects/randCast
-56 verbose already installed skipping jasmine-core@^2.3.4 /Users/Sivan/Documents/Projects/randCast
-57 verbose already installed skipping karma@^0.13.10 /Users/Sivan/Documents/Projects/randCast
-58 verbose already installed skipping karma-jasmine@^0.3.6 /Users/Sivan/Documents/Projects/randCast
-59 verbose already installed skipping karma-phantomjs-launcher@^0.2.1 /Users/Sivan/Documents/Projects/randCast
-60 verbose already installed skipping phantomjs@^1.9.18 /Users/Sivan/Documents/Projects/randCast
-61 silly cache add args [ 'protractor@^2.3.0', null ]
-62 verbose cache add spec protractor@^2.3.0
-63 silly cache add parsed spec { raw: 'protractor@^2.3.0',
-63 silly cache add   scope: null,
-63 silly cache add   name: 'protractor',
-63 silly cache add   rawSpec: '^2.3.0',
-63 silly cache add   spec: '>=2.3.0 <3.0.0',
-63 silly cache add   type: 'range' }
-64 silly addNamed protractor@>=2.3.0 <3.0.0
-65 verbose addNamed ">=2.3.0 <3.0.0" is a valid semver range for protractor
-66 silly addNameRange { name: 'protractor', range: '>=2.3.0 <3.0.0', hasData: false }
-67 silly mapToRegistry name protractor
-68 silly mapToRegistry using default registry
-69 silly mapToRegistry registry https://registry.npmjs.org/
-70 silly mapToRegistry uri https://registry.npmjs.org/protractor
-71 verbose addNameRange registry:https://registry.npmjs.org/protractor not in flight; fetching
+12 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-loading-bar/package.json
+13 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-mocks/package.json
+14 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-route/package.json
+15 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/bower/package.json
+16 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/connect/package.json
+17 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/express/package.json
+18 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp/package.json
+19 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-concat/package.json
+20 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-minify-css/package.json
+21 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-rename/package.json
+22 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-sass/package.json
+23 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-util/package.json
+24 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/jasmine-core/package.json
+25 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma/package.json
+26 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-jasmine/package.json
+27 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-phantomjs-launcher/package.json
+28 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/phantomjs/package.json
+29 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/protractor/package.json
+30 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/serve-static/package.json
+31 verbose installManyTop reading scoped package data from /Users/Sivan/Documents/Projects/randCast/node_modules/shelljs/package.json
+32 info package.json gulp-rename@1.2.2 No license field.
+33 info package.json gulp-minify-css@0.3.13 No license field.
+34 info package.json gulp-util@2.2.20 No license field.
+35 info package.json shelljs@0.3.0 license should be a valid SPDX license expression
+36 verbose readDependencies loading dependencies from /Users/Sivan/Documents/Projects/randCast/package.json
+37 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-loading-bar/package.json
+38 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-mocks/package.json
+39 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/angular-route/package.json
+40 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/bower/package.json
+41 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/connect/package.json
+42 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/express/package.json
+43 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp/package.json
+44 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-concat/package.json
+45 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-minify-css/package.json
+46 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-rename/package.json
+47 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-sass/package.json
+48 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/gulp-util/package.json
+49 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/jasmine-core/package.json
+50 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma/package.json
+51 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-jasmine/package.json
+52 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/karma-phantomjs-launcher/package.json
+53 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/phantomjs/package.json
+54 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/protractor/package.json
+55 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/serve-static/package.json
+56 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/shelljs/package.json
+57 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/bower/package.json
+58 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/gulp/package.json
+59 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/karma/package.json
+60 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/phantomjs/package.json
+61 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/protractor/package.json
+62 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/shjs/package.json
+63 verbose targetResolver reading package data from /Users/Sivan/Documents/Projects/randCast/node_modules/.bin/webdriver-manager/package.json
+64 verbose already installed skipping bower@^1.3.3 /Users/Sivan/Documents/Projects/randCast
+65 verbose already installed skipping gulp-util@^2.2.14 /Users/Sivan/Documents/Projects/randCast
+66 verbose already installed skipping jasmine-core@^2.3.4 /Users/Sivan/Documents/Projects/randCast
+67 verbose already installed skipping karma@^0.13.10 /Users/Sivan/Documents/Projects/randCast
+68 verbose already installed skipping karma-jasmine@^0.3.6 /Users/Sivan/Documents/Projects/randCast
+69 verbose already installed skipping karma-phantomjs-launcher@^0.2.1 /Users/Sivan/Documents/Projects/randCast
+70 verbose already installed skipping phantomjs@^1.9.18 /Users/Sivan/Documents/Projects/randCast
+71 verbose already installed skipping protractor@^2.3.0 /Users/Sivan/Documents/Projects/randCast
 72 verbose already installed skipping shelljs@^0.3.0 /Users/Sivan/Documents/Projects/randCast
-73 silly cache add args [ 'angular-loading-bar@^0.8.0', null ]
-74 verbose cache add spec angular-loading-bar@^0.8.0
-75 silly cache add parsed spec { raw: 'angular-loading-bar@^0.8.0',
-75 silly cache add   scope: null,
-75 silly cache add   name: 'angular-loading-bar',
-75 silly cache add   rawSpec: '^0.8.0',
-75 silly cache add   spec: '>=0.8.0 <0.9.0',
-75 silly cache add   type: 'range' }
-76 silly addNamed angular-loading-bar@>=0.8.0 <0.9.0
-77 verbose addNamed ">=0.8.0 <0.9.0" is a valid semver range for angular-loading-bar
-78 silly addNameRange { name: 'angular-loading-bar',
-78 silly addNameRange   range: '>=0.8.0 <0.9.0',
-78 silly addNameRange   hasData: false }
-79 silly mapToRegistry name angular-loading-bar
-80 silly mapToRegistry using default registry
-81 silly mapToRegistry registry https://registry.npmjs.org/
-82 silly mapToRegistry uri https://registry.npmjs.org/angular-loading-bar
-83 verbose addNameRange registry:https://registry.npmjs.org/angular-loading-bar not in flight; fetching
-84 verbose already installed skipping express@^4.13.3 /Users/Sivan/Documents/Projects/randCast
-85 verbose already installed skipping gulp@^3.5.6 /Users/Sivan/Documents/Projects/randCast
-86 verbose already installed skipping gulp-concat@^2.2.0 /Users/Sivan/Documents/Projects/randCast
-87 verbose already installed skipping gulp-minify-css@^0.3.0 /Users/Sivan/Documents/Projects/randCast
-88 verbose already installed skipping gulp-rename@^1.2.0 /Users/Sivan/Documents/Projects/randCast
-89 verbose already installed skipping gulp-sass@^1.3.3 /Users/Sivan/Documents/Projects/randCast
-90 verbose request uri https://registry.npmjs.org/angular-loading-bar
-91 verbose request no auth needed
-92 info attempt registry request try #1 at 10:59:51
-93 verbose request id 3e17590836bfd001
-94 verbose etag "BO29N6D8O88N6HD9TL7CEFG6Q"
-95 http request GET https://registry.npmjs.org/angular-loading-bar
-96 silly cache add args [ 'ng-FitText@3.3.3', null ]
-97 verbose cache add spec ng-FitText@3.3.3
-98 silly cache add parsed spec { raw: 'ng-FitText@3.3.3',
-98 silly cache add   scope: null,
-98 silly cache add   name: 'ng-FitText',
-98 silly cache add   rawSpec: '3.3.3',
-98 silly cache add   spec: '3.3.3',
-98 silly cache add   type: 'version' }
-99 silly addNamed ng-FitText@3.3.3
-100 verbose addNamed "3.3.3" is a plain semver version for ng-FitText
-101 silly mapToRegistry name ng-FitText
-102 silly mapToRegistry using default registry
-103 silly mapToRegistry registry https://registry.npmjs.org/
-104 silly mapToRegistry uri https://registry.npmjs.org/ng-FitText
-105 verbose addNameVersion registry:https://registry.npmjs.org/ng-FitText not in flight; fetching
-106 verbose already installed skipping angular-mocks@^1.4.7 /Users/Sivan/Documents/Projects/randCast
-107 verbose already installed skipping angular-route@^1.4.7 /Users/Sivan/Documents/Projects/randCast
-108 verbose request uri https://registry.npmjs.org/ng-FitText
-109 verbose request no auth needed
-110 info attempt registry request try #1 at 10:59:51
-111 http request GET https://registry.npmjs.org/ng-FitText
-112 verbose request uri https://registry.npmjs.org/protractor
-113 verbose request no auth needed
-114 info attempt registry request try #1 at 10:59:51
-115 verbose etag "EEM5LI51UUO7DZTYA78L75ZFT"
-116 http request GET https://registry.npmjs.org/protractor
-117 http 304 https://registry.npmjs.org/protractor
-118 silly get cb [ 304,
-118 silly get   { date: 'Mon, 09 Nov 2015 10:59:52 GMT',
-118 silly get     via: '1.1 varnish',
-118 silly get     'cache-control': 'max-age=60',
-118 silly get     etag: '"EEM5LI51UUO7DZTYA78L75ZFT"',
-118 silly get     age: '0',
-118 silly get     connection: 'keep-alive',
-118 silly get     'x-served-by': 'cache-lhr6324-LHR',
-118 silly get     'x-cache': 'HIT',
-118 silly get     'x-cache-hits': '1',
-118 silly get     'x-timer': 'S1447066792.557856,VS0,VE88',
-118 silly get     vary: 'Accept' } ]
-119 verbose etag https://registry.npmjs.org/protractor from cache
-120 verbose get saving protractor to /Users/Sivan/.npm/registry.npmjs.org/protractor/.cache.json
-121 silly addNameRange number 2 { name: 'protractor', range: '>=2.3.0 <3.0.0', hasData: true }
-122 silly addNameRange versions [ 'protractor',
-122 silly addNameRange   [ '0.1.0',
-122 silly addNameRange     '0.1.1',
-122 silly addNameRange     '0.1.2',
-122 silly addNameRange     '0.1.3',
-122 silly addNameRange     '0.2.0',
-122 silly addNameRange     '0.2.1',
-122 silly addNameRange     '0.3.0',
-122 silly addNameRange     '0.4.0',
-122 silly addNameRange     '0.4.1',
-122 silly addNameRange     '0.5.0',
-122 silly addNameRange     '0.6.1',
-122 silly addNameRange     '0.7.0',
-122 silly addNameRange     '0.8.0',
-122 silly addNameRange     '0.9.0',
-122 silly addNameRange     '0.10.0',
-122 silly addNameRange     '0.11.0',
-122 silly addNameRange     '0.12.0',
-122 silly addNameRange     '0.12.1',
-122 silly addNameRange     '0.13.0',
-122 silly addNameRange     '0.14.0',
-122 silly addNameRange     '0.15.0',
-122 silly addNameRange     '0.16.0',
-122 silly addNameRange     '0.16.1',
-122 silly addNameRange     '0.17.0',
-122 silly addNameRange     '0.18.0',
-122 silly addNameRange     '0.18.1',
-122 silly addNameRange     '0.19.0',
-122 silly addNameRange     '0.20.0',
-122 silly addNameRange     '0.20.1',
-122 silly addNameRange     '0.21.0',
-122 silly addNameRange     '0.22.0',
-122 silly addNameRange     '0.23.0',
-122 silly addNameRange     '0.23.1',
-122 silly addNameRange     '0.24.0',
-122 silly addNameRange     '0.24.1',
-122 silly addNameRange     '0.24.2',
-122 silly addNameRange     '1.0.0-rc1',
-122 silly addNameRange     '1.0.0-rc2',
-122 silly addNameRange     '1.0.0-rc3',
-122 silly addNameRange     '1.0.0-rc4',
-122 silly addNameRange     '1.0.0-rc5',
-122 silly addNameRange     '1.0.0-rc6',
-122 silly addNameRange     '1.0.0',
-122 silly addNameRange     '1.1.0',
-122 silly addNameRange     '1.1.1',
-122 silly addNameRange     '1.2.0-beta1',
-122 silly addNameRange     '1.2.0',
-122 silly addNameRange     '1.3.0',
-122 silly addNameRange     '1.3.1',
-122 silly addNameRange     '1.4.0',
-122 silly addNameRange     '1.5.0',
-122 silly addNameRange     '1.6.0',
-122 silly addNameRange     '1.6.1',
-122 silly addNameRange     '1.7.0',
-122 silly addNameRange     '1.8.0',
-122 silly addNameRange     '2.0.0',
-122 silly addNameRange     '2.1.0',
-122 silly addNameRange     '2.2.0',
-122 silly addNameRange     '2.3.0',
-122 silly addNameRange     '2.4.0',
-122 silly addNameRange     '2.5.0',
-122 silly addNameRange     '2.5.1' ] ]
-123 silly addNamed protractor@2.5.1
-124 verbose addNamed "2.5.1" is a plain semver version for protractor
-125 silly cache afterAdd protractor@2.5.1
-126 verbose afterAdd /Users/Sivan/.npm/protractor/2.5.1/package/package.json not in flight; writing
-127 verbose afterAdd /Users/Sivan/.npm/protractor/2.5.1/package/package.json written
-128 http 404 https://registry.npmjs.org/ng-FitText
-129 verbose headers { 'content-type': 'application/json',
-129 verbose headers   'cache-control': 'max-age=0',
-129 verbose headers   'content-length': '2',
-129 verbose headers   'accept-ranges': 'bytes',
-129 verbose headers   date: 'Mon, 09 Nov 2015 10:59:52 GMT',
-129 verbose headers   via: '1.1 varnish',
-129 verbose headers   age: '0',
-129 verbose headers   connection: 'keep-alive',
-129 verbose headers   'x-served-by': 'cache-lhr6322-LHR',
-129 verbose headers   'x-cache': 'MISS',
-129 verbose headers   'x-cache-hits': '0',
-129 verbose headers   'x-timer': 'S1447066792.557851,VS0,VE158' }
-130 silly get cb [ 404,
-130 silly get   { 'content-type': 'application/json',
-130 silly get     'cache-control': 'max-age=0',
-130 silly get     'content-length': '2',
-130 silly get     'accept-ranges': 'bytes',
-130 silly get     date: 'Mon, 09 Nov 2015 10:59:52 GMT',
-130 silly get     via: '1.1 varnish',
-130 silly get     age: '0',
-130 silly get     connection: 'keep-alive',
-130 silly get     'x-served-by': 'cache-lhr6322-LHR',
-130 silly get     'x-cache': 'MISS',
-130 silly get     'x-cache-hits': '0',
-130 silly get     'x-timer': 'S1447066792.557851,VS0,VE158' } ]
-131 http 304 https://registry.npmjs.org/angular-loading-bar
-132 silly get cb [ 304,
-132 silly get   { date: 'Mon, 09 Nov 2015 10:59:52 GMT',
-132 silly get     via: '1.1 varnish',
-132 silly get     'cache-control': 'max-age=60',
-132 silly get     etag: '"BO29N6D8O88N6HD9TL7CEFG6Q"',
-132 silly get     age: '0',
-132 silly get     connection: 'keep-alive',
-132 silly get     'x-served-by': 'cache-lhr6332-LHR',
-132 silly get     'x-cache': 'HIT',
-132 silly get     'x-cache-hits': '1',
-132 silly get     'x-timer': 'S1447066792.920745,VS0,VE85',
-132 silly get     vary: 'Accept' } ]
-133 verbose etag https://registry.npmjs.org/angular-loading-bar from cache
-134 verbose get saving angular-loading-bar to /Users/Sivan/.npm/registry.npmjs.org/angular-loading-bar/.cache.json
-135 silly addNameRange number 2 { name: 'angular-loading-bar',
-135 silly addNameRange   range: '>=0.8.0 <0.9.0',
-135 silly addNameRange   hasData: true }
-136 silly addNameRange versions [ 'angular-loading-bar',
-136 silly addNameRange   [ '0.0.1',
-136 silly addNameRange     '0.0.3',
-136 silly addNameRange     '0.0.4',
-136 silly addNameRange     '0.0.5',
-136 silly addNameRange     '0.1.0',
-136 silly addNameRange     '0.1.1',
-136 silly addNameRange     '0.2.0',
-136 silly addNameRange     '0.3.0',
-136 silly addNameRange     '0.4.0',
-136 silly addNameRange     '0.4.1',
-136 silly addNameRange     '0.4.2',
-136 silly addNameRange     '0.4.3',
-136 silly addNameRange     '0.5.0',
-136 silly addNameRange     '0.5.1',
-136 silly addNameRange     '0.5.2',
-136 silly addNameRange     '0.6.0',
-136 silly addNameRange     '0.7.1',
-136 silly addNameRange     '0.8.0' ] ]
-137 silly addNamed angular-loading-bar@0.8.0
-138 verbose addNamed "0.8.0" is a plain semver version for angular-loading-bar
-139 silly cache afterAdd angular-loading-bar@0.8.0
-140 verbose afterAdd /Users/Sivan/.npm/angular-loading-bar/0.8.0/package/package.json not in flight; writing
-141 verbose afterAdd /Users/Sivan/.npm/angular-loading-bar/0.8.0/package/package.json written
-142 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/ng-FitText
-142 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
-142 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
-142 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:197:22)
-142 verbose stack     at Request.emit (events.js:110:17)
-142 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1050:14)
-142 verbose stack     at Request.emit (events.js:129:20)
-142 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:996:12)
-142 verbose stack     at IncomingMessage.emit (events.js:129:20)
-142 verbose stack     at _stream_readable.js:908:16
-142 verbose stack     at process._tickCallback (node.js:355:11)
-143 verbose statusCode 404
-144 verbose pkgid ng-FitText
-145 verbose cwd /Users/Sivan/Documents/Projects/randCast
-146 error Darwin 14.5.0
-147 error argv "node" "/usr/local/bin/npm" "install"
-148 error node v0.12.7
-149 error npm  v2.12.1
-150 error code E404
-151 error 404 Registry returned 404 for GET on https://registry.npmjs.org/ng-FitText
-151 error 404
-151 error 404 'ng-FitText' is not in the npm registry.
-151 error 404 Your package name is not valid, because
-151 error 404
-151 error 404  1. name can no longer contain capital letters
-151 error 404 It was specified as a dependency of 'randcast'
-151 error 404
-151 error 404 Note that you can also install from a
-151 error 404 tarball, folder, http url, or git url.
-152 verbose exit [ 1, true ]
+73 verbose already installed skipping angular-loading-bar@^0.8.0 /Users/Sivan/Documents/Projects/randCast
+74 verbose already installed skipping express@^4.13.3 /Users/Sivan/Documents/Projects/randCast
+75 verbose already installed skipping gulp@^3.5.6 /Users/Sivan/Documents/Projects/randCast
+76 verbose already installed skipping gulp-concat@^2.2.0 /Users/Sivan/Documents/Projects/randCast
+77 verbose already installed skipping gulp-minify-css@^0.3.0 /Users/Sivan/Documents/Projects/randCast
+78 verbose already installed skipping gulp-rename@^1.2.0 /Users/Sivan/Documents/Projects/randCast
+79 verbose already installed skipping gulp-sass@^1.3.3 /Users/Sivan/Documents/Projects/randCast
+80 silly cache add args [ 'ng-FitText@3.3.3', null ]
+81 verbose cache add spec ng-FitText@3.3.3
+82 silly cache add parsed spec { raw: 'ng-FitText@3.3.3',
+82 silly cache add   scope: null,
+82 silly cache add   name: 'ng-FitText',
+82 silly cache add   rawSpec: '3.3.3',
+82 silly cache add   spec: '3.3.3',
+82 silly cache add   type: 'version' }
+83 silly addNamed ng-FitText@3.3.3
+84 verbose addNamed "3.3.3" is a plain semver version for ng-FitText
+85 silly mapToRegistry name ng-FitText
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry uri https://registry.npmjs.org/ng-FitText
+89 verbose addNameVersion registry:https://registry.npmjs.org/ng-FitText not in flight; fetching
+90 verbose already installed skipping angular-mocks@^1.4.7 /Users/Sivan/Documents/Projects/randCast
+91 verbose already installed skipping angular-route@^1.4.7 /Users/Sivan/Documents/Projects/randCast
+92 verbose request uri https://registry.npmjs.org/ng-FitText
+93 verbose request no auth needed
+94 info attempt registry request try #1 at 11:44:21
+95 verbose request id 0aaa85329998dfcd
+96 http request GET https://registry.npmjs.org/ng-FitText
+97 http 404 https://registry.npmjs.org/ng-FitText
+98 verbose headers { 'content-type': 'application/json',
+98 verbose headers   'cache-control': 'max-age=0',
+98 verbose headers   'content-length': '2',
+98 verbose headers   'accept-ranges': 'bytes',
+98 verbose headers   date: 'Mon, 09 Nov 2015 11:44:21 GMT',
+98 verbose headers   via: '1.1 varnish',
+98 verbose headers   age: '0',
+98 verbose headers   connection: 'keep-alive',
+98 verbose headers   'x-served-by': 'cache-lcy1133-LCY',
+98 verbose headers   'x-cache': 'MISS',
+98 verbose headers   'x-cache-hits': '0',
+98 verbose headers   'x-timer': 'S1447069461.175785,VS0,VE155' }
+99 silly get cb [ 404,
+99 silly get   { 'content-type': 'application/json',
+99 silly get     'cache-control': 'max-age=0',
+99 silly get     'content-length': '2',
+99 silly get     'accept-ranges': 'bytes',
+99 silly get     date: 'Mon, 09 Nov 2015 11:44:21 GMT',
+99 silly get     via: '1.1 varnish',
+99 silly get     age: '0',
+99 silly get     connection: 'keep-alive',
+99 silly get     'x-served-by': 'cache-lcy1133-LCY',
+99 silly get     'x-cache': 'MISS',
+99 silly get     'x-cache-hits': '0',
+99 silly get     'x-timer': 'S1447069461.175785,VS0,VE155' } ]
+100 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/ng-FitText
+100 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+100 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+100 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:197:22)
+100 verbose stack     at Request.emit (events.js:110:17)
+100 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1050:14)
+100 verbose stack     at Request.emit (events.js:129:20)
+100 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:996:12)
+100 verbose stack     at IncomingMessage.emit (events.js:129:20)
+100 verbose stack     at _stream_readable.js:908:16
+100 verbose stack     at process._tickCallback (node.js:355:11)
+101 verbose statusCode 404
+102 verbose pkgid ng-FitText
+103 verbose cwd /Users/Sivan/Documents/Projects/randCast
+104 error Darwin 14.5.0
+105 error argv "node" "/usr/local/bin/npm" "install"
+106 error node v0.12.7
+107 error npm  v2.12.1
+108 error code E404
+109 error 404 Registry returned 404 for GET on https://registry.npmjs.org/ng-FitText
+109 error 404
+109 error 404 'ng-FitText' is not in the npm registry.
+109 error 404 Your package name is not valid, because
+109 error 404
+109 error 404  1. name can no longer contain capital letters
+109 error 404 It was specified as a dependency of 'randcast'
+109 error 404
+109 error 404 Note that you can also install from a
+109 error 404 tarball, folder, http url, or git url.
+110 verbose exit [ 1, true ]
