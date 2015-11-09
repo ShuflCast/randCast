@@ -2,6 +2,9 @@
   "name": "randcast",
   "version": "1.0.0",
   "description": "randCast: An Ionic project",
+  "engines": {
+    "node": "0.12.7"
+  },
   "dependencies": {
     "angular-loading-bar": "^0.8.0",
     "express": "^4.13.3",
